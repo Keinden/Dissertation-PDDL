@@ -1,12 +1,19 @@
 (define (domain dockyard)
-    (:requirements :strips :equality :typing :negative-preconditions)
+    (:requirements :strips :typing :conditional-effects :negative-preconditions :equality :universal-preconditions)
     (:types
+        location
         bridge dock platform - location
-        robot worker - agent
+        agent
+
+        transport
         truck - transport
+
+        vehicle
         ship crane - vehicle
         cargo
-        idle get_cargo load_transport drive_transport unload_transport - state
+
+        state
+        idle drive_transport get_cargo load_transport unload_transport - state
     )
 
     (:predicates (is_in ?x ?y)
@@ -15,9 +22,9 @@
 
                  ; CHECKS
                  (empty ?x)
+                 (crane ?x - agent)
     )
-    
-    ; STATES
+
     (:action change_into_state
         :parameters (?agent - agent
                      ?state1 - idle
@@ -25,7 +32,8 @@
                     )
         :precondition (and
                         (state ?agent ?state1)
-                        (not (state ?agent ?state2))    
+                        (not (state ?agent ?state2))
+                        (not (crane ?agent))
         )
         :effect (and
                      (state ?agent ?state2)
@@ -40,7 +48,8 @@
                     )
         :precondition (and
                         (state ?agent ?state1)
-                        (not (state ?agent ?state2))    
+                        (not (state ?agent ?state2))
+                        (not (crane ?agent))
                       )
         :effect (and
                      (state ?agent ?state2)
@@ -48,7 +57,6 @@
         )
     )
 
-    ; SHIP UNLOAD
     (:action ship_unload
         :parameters (?agent - agent
                      ?state - get_cargo
@@ -66,6 +74,7 @@
                         (is_in ?cargo ?ship)
                         (is_in ?platform ?dock)
                         (empty ?platform)
+                        (crane ?agent)
                       )
         :effect (and
                     (not (is_in ?cargo ?ship))
@@ -73,8 +82,7 @@
                     (is_in ?cargo ?platform)
                 )
     )
-    
-    ; LOAD TRANSPORT
+
     (:action load_transport
         :parameters (?agent1 - agent
                      ?agent2 - agent
@@ -97,14 +105,14 @@
                         (not (empty ?platform))
                         (not (is_in ?cargo ?truck))
                         (empty ?truck)
+                        (crane ?agent1)
                       )
         :effect (and 
                     (not (is_in ?cargo ?platform))
                     (is_in ?cargo ?truck)
                 )
     )
-    
-    ; UNLOAD TRANSPORT
+
     (:action unload_transport
         :parameters (?agent1 - agent
                      ?agent2 - agent
@@ -127,14 +135,16 @@
                         (not (is_in ?cargo ?platform))
                         (empty ?platform)
                         (not (empty ?truck))
+                        (crane ?agent1)
         )
         :effect (and 
                     (not (is_in ?cargo ?truck))
                     (is_in ?cargo ?platform)
+                    (empty ?truck)
+                    (not (empty ?platform))
         )
     )
-    
-    ; DRIVE
+
     (:action drive_transport
         :parameters (?agent - agent
                      ?state - drive_transport
@@ -147,7 +157,7 @@
                         (is_in ?agent ?transport)
                         (is_in ?transport ?location1)
                         (not (is_in ?transport ?location2))
-
+                        (not (crane ?agent))
                         (path ?location1 ?location2)
         )
         :effect (and 
@@ -155,4 +165,81 @@
                     (is_in ?transport ?location2)
         )
     )
+
+    (:action into_crane
+        :parameters (?agent - agent
+                     ?crane - crane
+                     ?dock - dock
+                     ?state1 - idle
+                     ?state2 - drive_transport
+                    )
+        :precondition (and 
+                        (not (state ?agent ?state1))
+                        (not (state ?agent ?state2))
+                        (is_in ?agent ?dock)
+                        (is_in ?crane ?dock)
+                        (not (is_in ?agent ?crane))
+                      )
+        :effect (and
+            (is_in ?agent ?crane)
+            (crane ?agent)
+        )
+    )
+
+    (:action exit_crane
+        :parameters (?agent - agent
+                     ?crane - crane
+                     ?dock - dock
+                     ?state1 - idle
+                     ?state2 - drive_transport
+                    )
+        :precondition (and 
+                        (not (state ?agent ?state1))
+                        (not (state ?agent ?state2))
+                        (is_in ?agent ?crane)
+                        (is_in ?crane ?dock)
+                        (not (is_in ?agent ?dock))
+                      )
+        :effect (and
+            (not (is_in ?agent ?crane))
+            (not (crane ?agent))
+        )
+    )
+    
+    (:action into_transport
+        :parameters (?agent - agent
+                     ?state - drive_transport
+                     ?truck - transport
+                     ?dock - dock
+                    )
+        :precondition (and
+                        (state ?agent ?state)
+                        (not (is_in ?agent ?truck))
+                        (is_in ?agent ?dock)
+                        (is_in ?truck ?dock)
+        )
+        :effect (and
+                    (is_in ?agent ?truck)
+                    (not (is_in ?agent ?dock))
+        )
+    )
+    
+    (:action exit_transport
+        :parameters (?agent - agent
+                     ?state - drive_transport
+                     ?truck - transport
+                     ?dock - dock
+                    )
+        :precondition (and
+                        (state ?agent ?state)
+                        (is_in ?agent ?truck)
+                        (not (is_in ?agent ?dock))
+                        (is_in ?truck ?dock)
+        )
+        :effect (and
+                    (not (is_in ?agent ?truck))
+                    (is_in ?agent ?dock)
+        )
+    )
+    
 )
