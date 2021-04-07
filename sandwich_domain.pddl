@@ -3,6 +3,7 @@
     (:requirements :strips :typing :conditional-effects :negative-preconditions :equality :universal-preconditions)
 
     (:types
+
         bread ham cheese table plate- object
         arm
     )
@@ -58,11 +59,16 @@
     )
     
     (:action unstack
+<<<<<<< HEAD
         :parameters (?obj1 - object
                      obj2 - object)
         :precondition (and
             
          )
+=======
+        :parameters (?obj1 - obj2 )
+        :precondition (and )
+>>>>>>> aadef21a24e43943f596c2f7f91fb8de074662a3
         :effect (and )
     )
     
