@@ -1,186 +1,294 @@
 (define (domain dock)
 
 (:requirements :strips :typing :negative-preconditions :equality)
-
 (:types
     location
-    dock distribution_centre distributor - location
+    dock port distribution_centre distributor - location
     ship
     
-    workVehicles
-    truck truck-crane - workVehicles
+    vehicle
+    work_vehicle distribution_vehicle - vehicle
+    truck - work_vehicle
+    van  - distribution_vehicle
 
     machine
-    crane - machine
+    crane truck_crane - machine
 
     agent
     container
     cargo
 )
 
+; un-comment following line if constants are needed
+;(:constants ) 
+
 (:predicates
+    ; General
     (in ?x ?y)
+    (adjacent ?ship - ship ?dock - dock)
     (adjacent ?loc1 - location ?loc2 - location)
-    (adjacent ?loc1 - dock ?loc2 - ship)
-    (loaded ?veh - workVehicles ?con - container)
-    (loaded ?veh - crane ?cgo - cargo)
-    (unloaded ?veh - workVehicles)
-    (stored ?con - container ?loc - location)
-    (stored ?con - container ?ship - ship)
-    (available ?x)
+
+    ; Vehicle related
+    (loaded ?wkvhle - work_vehicle ?container - container)
+    (loaded ?machine - machine ?container - container)
+    (loaded ?distvhle - distribution_vehicle ?cargo - cargo)
+    (unloaded ?vehicle - vehicle)
+    (unloaded ?machine - machine)
+    (driver_available ?vehicle - vehicle)
+    (passenger_available ?vehicle - vehicle)
+    (driver ?driver - agent ?vehicle - vehicle)
+    (passenger ?passenger - agent ?vehicle - vehicle)
+    
+    ; Machine related
+    (operator_available ?machine - machine)
+    (operating ?agt - agent ?machine - machine)
 )
 
-; ACTIONS
+; Actions
 
-;General actions
+; General Actions
 (:action walk
     :parameters (?agt - agent ?loc1 - location ?loc2 - location)
-    :precondition (and 
-        (in ?agt ?loc1)
+    :precondition (and
+        (in ?agt ?loc2)
         (adjacent ?loc1 ?loc2)
     )
-    :effect (and 
+    :effect (and
         (not (in ?agt ?loc1))
         (in ?agt ?loc2)
     )
 )
 
-(:action get_into_vehicle
-    :parameters (?agt - agent ?wvh - workVehicles ?loc - location)
+(:action board_driver
+    :parameters (?agt - agent ?veh - vehicle ?loc - location)
     :precondition (and 
         (in ?agt ?loc)
-        (in ?wvh ?loc)
-        (not (in ?agt ?wvh))
-        (available ?wvh)
+        (in ?veh ?loc)
+        (driver_available ?veh)
     )
     :effect (and 
-        (in ?agt ?wvh)
         (not (in ?agt ?loc))
-        (not (available ?wvh))
+        (not (driver_available ?veh))
+        (driver ?agt ?veh)
     )
 )
 
-(:action get_out_of_vehicle
-    :parameters (?agt - agent ?wvh - workVehicles ?loc - location)
+(:action board_passenger
+    :parameters (?agt - agent ?veh - vehicle ?loc - location)
     :precondition (and 
-        (in ?agt ?wvh)
-        (in ?wvh ?loc)
-        (not (in ?agt ?loc))
-        (not (available ?wvh))
+        (in ?agt ?loc)
+        (in ?veh ?loc)
+        (passenger_available ?veh)
     )
     :effect (and 
-        (not (in ?agt ?wvh))
-        (in ?agt ?loc)
-        (available ?wvh)
+        (not (in ?agt ?loc))
+        (not (passenger_available ?veh))
+        (passenger ?agt ?veh)
     )
 )
 
-(:action drive
-    :parameters (?agt - agent ?wvh - truck ?loc1 - location ?loc2 - location)
+(:action driver_disembark
+    :parameters (?agt - agent ?veh - vehicle ?loc - location)
     :precondition (and 
-        (in ?agt ?wvh)
-        (in ?wvh ?loc1)
+        (in ?veh ?loc)
+        (driver ?agt ?veh)
+    )
+    :effect (and 
+        (in ?agt ?loc)
+        (not (driver ?agt ?veh))
+        (driver_available ?veh)
+    )
+)
+
+(:action passenger_disembark
+    :parameters (?agt - agent ?veh - vehicle ?loc - location)
+    :precondition (and 
+        (in ?veh ?loc)
+        (passenger ?agt ?veh)
+    )
+    :effect (and 
+        (in ?agt ?loc)
+        (not (passenger ?agt ?veh))
+        (passenger_available ?veh)
+    )
+)
+
+(:action drive_vehicle
+    :parameters (?agt - agent ?veh - vehicle ?loc1 - location ?loc2 - location)
+    :precondition (and 
+        (driver ?agt ?veh)
+        (in ?veh ?loc1)
         (adjacent ?loc1 ?loc2)
     )
     :effect (and 
-        (not (in ?wvh ?loc1))
-        (in ?wvh ?loc2)
+        (not (in ?veh ?loc1))
+        (in ?veh ?loc2)
     )
 )
 
-
-;Dock
-(:action lift_cargo
-    :parameters (?agt - agent ?tkcrn - truck-crane ?loc - location ?con - container)
+; Dock Actions
+(:action operate_machine
+    :parameters (?machine - machine ?loc - location ?agt - agent)
     :precondition (and 
-        (in ?agt ?tkcrn)
-        (in ?tkcrn ?loc)
-        (stored ?con ?loc)
-        (unloaded ?tkcrn)rane actions
-        (not (stored ?con ?loc))
-        (not (unloaded ?tkcrn))
-        (loaded ?tkcrn ?con)
-    )
-)
-
-(:action drop_cargo
-    :parameters (?agt - agent ?tkcrn - truck-crane ?loc - location ?con - container)
-    :precondition (and 
-        (in ?agt ?tkcrn)
-        (in ?tkcrn ?loc)
-        (loaded ?tkcrn ?con)
+        (in ?agt ?loc)
+        (in ?machine ?loc)
+        (operator_available ?machine)
     )
     :effect (and 
-        (not (loaded ?tkcrn ?con))
-        (stored ?con ?loc)
-        (unloaded ?tkcrn)
+        (not (in ?agt ?loc))
+        (operating ?agt ?machine)
+    )
+)
+
+(:action disembark_machine
+    :parameters (?machine - machine ?loc - location ?agt - agent)
+    :precondition (and 
+        (in ?machine ?loc)
+        (operating ?agt ?machine)
+    )
+    :effect (and 
+        (in ?agt ?loc)
+        (not (operating ?agt ?machine))
+        (operator_available ?machine)
+    )
+)
+
+(:action lift_container
+    :parameters (?truck_crane - truck_crane ?container - container ?agt - agent ?loc - location)
+    :precondition (and 
+        (in ?container ?loc)
+        (in ?truck_crane ?loc)
+        (operating ?agt ?truck_crane)
+        (unloaded ?truck_crane)
+    )
+    :effect (and 
+        (not (unloaded ?truck_crane))
+        (not (in ?container ?loc))
+        (loaded ?truck_crane ?container)
+    )
+)
+
+(:action drop_container
+    :parameters (?truck_crane - truck_crane ?container - container ?agt - agent ?loc - location)
+    :precondition (and 
+        (in ?truck_crane ?loc)
+        (operating ?agt ?truck_crane)
+        (loaded ?truck_crane ?container)
+    )
+    :effect (and 
+        (not (loaded ?truck_crane ?container))
+        (unloaded ?truck_crane)
+        (in ?container ?loc)
     )
 )
 
 (:action load_truck
-    :parameters (?agt1 - agent ?agt2 - agent ?tkcrn - truck-crane ?trk - truck ?con - container ?dock - location)
-    :precondition (and 
-        (in ?agt1 ?tkcrn)
-        (in ?agt2 ?trk)
-        (in ?tkcrn ?dock)
-        (in ?trk ?dock)
-        (loaded ?tkcrn ?con)
-        (unloaded ?trk)
+    :parameters (?container - container ?truck_crane - truck_crane ?truck - truck ?agt1 - agent ?agt2 - agent ?loc - location)
+    :precondition (and
+        (in ?truck ?loc)
+        (in ?truck_crane ?loc)
+        (operating ?agt1 ?truck_crane)
+        (loaded ?truck_crane ?container)
+        (unloaded ?truck)
+        (driver ?agt2 ?truck)
     )
     :effect (and 
-        (not (loaded ?tkcrn ?con))
-        (not (unloaded ?trk))
-        (unloaded ?tkcrn)
-        (loaded ?trk ?con)
+        (not (unloaded ?truck))
+        (not (loaded ?truck_crane ?container))
+        (loaded ?truck ?container)
+        (unloaded ?truck_crane)
     )
 )
 
 (:action unload_truck
-    :parameters (?agt1 - agent ?agt2 - agent ?tkcrn - truck-crane ?trk - truck ?con - container ?dock - location)
-    :precondition (and 
-        (in ?agt1 ?tkcrn)
-        (in ?agt2 ?trk)
-        (in ?tkcrn ?dock)
-        (in ?trk ?dock)
-        (loaded ?trk ?con)
-        (unloaded ?tkcrn)
+    :parameters (?container - container ?truck_crane - truck_crane ?truck - truck ?agt1 - agent ?agt2 - agent ?loc - location)
+    :precondition (and
+        (in ?truck ?loc)
+        (in ?truck_crane ?loc)
+        (operating ?agt1 ?truck_crane)
+        (loaded ?truck ?container)
+        (unloaded ?truck_crane)
+        (driver ?agt2 ?truck)
     )
     :effect (and 
-        (not (loaded ?trk ?con))
-        (not (unloaded ?tkcrn))
-        (unloaded ?trk)
-        (loaded ?tkcrn ?con)
+        (not (unloaded ?truck_crane))
+        (not (loaded ?truck ?container))
+        (loaded ?truck_crane ?container)
+        (unloaded ?truck)
     )
 )
 
+(:action unload_container
+    :parameters (?container - container ?cargo - cargo ?agt - agent ?dist - distribution_centre)
+    :precondition (and 
+        (in ?container ?dist)
+        (in ?agt ?dist)
+        (in ?cargo ?container)
+    )
+    :effect (and
+        (in ?cargo ?dist)
+        (not (in ?cargo ?container))
+    )
+)
+
+(:action load_van
+    :parameters (?cargo - cargo ?van - van ?agt - agent ?dist - distribution_centre)
+    :precondition (and 
+        (in ?cargo ?dist)
+        (in ?van ?dist)
+        (in ?agt ?dist)
+        (unloaded ?van)
+    )
+    :effect (and
+        (not (unloaded ?van))
+        (not (in ?cargo ?dist))
+        (loaded ?van ?cargo)
+    )
+)
+
+(:action unload_van
+    :parameters (?cargo - cargo ?van - van ?agt - agent ?loc - location)
+    :precondition (and 
+        (in ?van ?loc)
+        (loaded ?van ?cargo)
+        (in ?agt ?loc)
+    )
+    :effect (and
+        (not (loaded ?van ?cargo))
+        (unloaded ?van)
+        (in ?cargo ?loc)
+    )
+)
+
+; Crane actions
 (:action unload_ship
-    :parameters (?agt1 - agent ?agt2 - agent ?crn - crane ?dock - dock ?ship - ship ?con - container)
-    :precondition (and 
-        (in ?agt1 ?dock)
-        (in ?agt2 ?crn)
-        (in ?crn ?dock)
-        (adjacent ?dock ?ship)
-        (stored ?con ?ship)
+    :parameters (?ship - ship ?crane - crane ?container - container ?agt - agent ?dock - dock)
+    :precondition (and
+        (in ?container ?ship)
+        (adjacent ?ship ?dock)
+        (in ?crane ?dock)
+        (operating ?agt ?crane)
+        (unloaded ?crane)
     )
     :effect (and 
-        (not (stored ?con ?ship))
-        (stored ?con ?dock)
+        (not (in ?container ?ship))
+        (loaded ?crane ?container)
+        (not (unloaded ?crane))
     )
 )
 
-(:action unpack_cargo
-    :parameters (?con - container ?cgo - cargo ?agent - agent ?dist - distribution_centre)
+(:action unload_crane
+    :parameters (?crane - crane ?container - container ?agt - agent ?dock - dock)
     :precondition (and 
-        (in ?cgo ?con)
-        (stored ?con ?dist)
-        (in ?agent ?dist)
+        (in ?crane ?dock)
+        (loaded ?crane ?container)
+        (operating ?agt ?crane)
     )
     :effect (and 
-        (not (in ?cgo ?con))
-        (in ?cgo ?dist)
+        (not (loaded ?crane ?container))
+        (in ?container ?dock)
     )
 )
-
 
 
 )

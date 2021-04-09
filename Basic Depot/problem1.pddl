@@ -1,66 +1,75 @@
 (define (problem dock1) (:domain dock)
 (:objects 
-    dock1 dock2 - dock
-    truck1 - truck
+    port1 - port
+    dock1 - dock
     ship1 - ship
-    crane1 - crane
-    truck-crane1 truck-crane2 truck-crane3 - truck-crane
-    agent1 agent2 - agent
+    distribution_centre1 - distribution_centre
+    distributor1 distributor2 - distributor
     container1 - container
     cargo1 cargo2 cargo3 cargo4 cargo5 - cargo
-    distribution_centre1 - distribution_centre
+    truck-crane1 truck-crane2 - truck_crane
+    crane1 - crane
+    agent1 agent2 - agent
+    truck1 - truck
+    van1 - van
 )
 
 (:init
-    (adjacent dock1 dock2)
-    (adjacent dock2 dock1)
-    (adjacent dock1 ship1)
-    (adjacent dock1 distribution_centre1)
-    (adjacent dock2 distribution_centre1)
-    (adjacent distribution_centre1 dock1)
-    (adjacent distribution_centre1 dock2)
-    (in agent1 dock2)
-    (in agent2 dock2)
-    (in truck-crane1 dock1)
-    (in truck-crane2 dock2)
-    (in truck-crane3 distribution_centre1)
-    (in truck1 dock2)
+    ; Map Layout
+    (adjacent port1 dock1)
+    (adjacent dock1 port1)
+    (adjacent port1 distribution_centre1)
+    (adjacent distribution_centre1 port1)
+    (adjacent distributor1 distribution_centre1)
+    (adjacent distribution_centre1 distributor1)
+    (adjacent distributor2 distribution_centre1)
+    (adjacent distribution_centre1 distributor2)
+    
+    ; Ship prep
+    (adjacent ship1 dock1)
     (in container1 ship1)
-    (in crane1 dock1)
-    
-    (unloaded truck-crane1)
-    (unloaded truck-crane2)
-    (unloaded truck-crane3)
-    (unloaded truck1)
-    (available truck-crane1)
-    (available truck-crane2)
-    (available truck-crane3)
-    (available truck1)
-    (available crane1)
-    
-    (stored container1 ship1)
     (in cargo1 container1)
     (in cargo2 container1)
     (in cargo3 container1)
     (in cargo4 container1)
     (in cargo5 container1)
+
+    ; Port prep
+    (in crane1 dock1)
+    (unloaded crane1)
+    (operator_available crane1)
+
+    ; Agent Prep
+    (in agent1 port1)
+    (in agent2 port1)
+
+    ; Vehicle Locations
+    (in truck1 port1)
+    (in truck-crane1 dock1)
+    (in truck-crane2 distribution_centre1)
+    (in van1 distribution_centre1)
+
+    ; Vehicle Prep
+    (driver_available truck1)
+    (driver_available van1)
+    (operator_available truck-crane1)
+    (operator_available truck-crane2)
+    (passenger_available truck1)
+    (unloaded truck-crane1)
+    (unloaded truck-crane2)
+    (unloaded truck1)
+    (unloaded van1)
 )
 
 (:goal (and
-    (in cargo1 distribution_centre1)
-    (in cargo2 distribution_centre1)
-    (in cargo3 distribution_centre1)
-    (in cargo4 distribution_centre1)
-    (in cargo5 distribution_centre1)
-
-    ; (loaded truck1 container1)
-    ; (in truck1 distribution_centre1)
-    ; (in agent1 distribution_centre1)
-    ; (in agent2 truck-crane3)
-
-    ; (stored container1 distribution_centre1)
+    (in cargo1 distributor1)
+    (in cargo2 distributor1)
+    (in cargo3 distributor2)
+    (in cargo4 distributor2)
+    (in cargo5 distributor2)
+    (in truck1 port1)
+    (in van1 distribution_centre1)
+    (in agent1 port1)
+    (in agent2 port1)
 ))
-
-
-
 )
