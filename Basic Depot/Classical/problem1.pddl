@@ -11,7 +11,7 @@
     crane1 - crane
     agent1 agent2 - agent
     truck1 - truck
-    van1 - van
+    van1 van2 - van
 )
 
 (:init
@@ -48,10 +48,12 @@
     (in truck-crane1 dock1)
     (in truck-crane2 distribution_centre1)
     (in van1 distribution_centre1)
+    (in van2 distribution_centre1)
 
     ; Vehicle Prep
     (driver_available truck1)
     (driver_available van1)
+    (driver_available van2)
     (operator_available truck-crane1)
     (operator_available truck-crane2)
     (passenger_available truck1)
@@ -59,6 +61,7 @@
     (unloaded truck-crane2)
     (unloaded truck1)
     (unloaded van1)
+    (unloaded van2)
 )
 
 (:goal (and
@@ -69,6 +72,7 @@
     (in cargo5 distributor2)
     (in truck1 port1)
     (in van1 distribution_centre1)
+    (in van2 distribution_centre1)
     (in agent1 port1)
     (in agent2 port1)
 ))

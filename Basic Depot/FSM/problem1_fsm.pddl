@@ -1,4 +1,4 @@
-(define (problem dock1) (:domain dock)
+(define (problem dock1) (:domain dock_fsm)
 (:objects 
     port1 - port
     dock1 - dock
@@ -11,12 +11,8 @@
     crane1 - crane
     agent1 agent2 - agent
     truck1 - truck
-    van1 - van
-
-    IDLE_STATE - idle_state
-    DOCK_STATE - dock_state
-    DISTRIBUTION_STATE - distribution_state
-    TRANSPORTATION_STATE - transportation_state
+    van1 van2 - van
+    IDLE_STATE DOCK_STATE DISTRIBUTION_STATE TRANSPORTATION_STATE - state
 )
 
 (:init
@@ -53,10 +49,12 @@
     (in truck-crane1 dock1)
     (in truck-crane2 distribution_centre1)
     (in van1 distribution_centre1)
+    (in van2 distribution_centre1)
 
     ; Vehicle Prep
     (driver_available truck1)
     (driver_available van1)
+    (driver_available van2)
     (operator_available truck-crane1)
     (operator_available truck-crane2)
     (passenger_available truck1)
@@ -64,6 +62,11 @@
     (unloaded truck-crane2)
     (unloaded truck1)
     (unloaded van1)
+    (unloaded van2)
+
+    ; Initial States
+    (state agent1 IDLE_STATE)
+    (state agent2 IDLE_STATE)
 )
 
 (:goal (and
@@ -74,6 +77,7 @@
     (in cargo5 distributor2)
     (in truck1 port1)
     (in van1 distribution_centre1)
+    (in van2 distribution_centre1)
     (in agent1 port1)
     (in agent2 port1)
 ))

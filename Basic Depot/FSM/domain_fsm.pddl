@@ -1,4 +1,4 @@
-(define (domain dock)
+(define (domain dock_fsm)
 
 (:requirements :strips :typing :negative-preconditions :equality)
 (:types
@@ -55,7 +55,7 @@
 
 ; Actions
 
-; General Actions
+; Universal Actions
 (:action walk
     :parameters (?agt - agent ?loc1 - location ?loc2 - location)
     :precondition (and
@@ -65,20 +65,6 @@
     :effect (and
         (not (in ?agt ?loc1))
         (in ?agt ?loc2)
-    )
-)
-
-(:action board_driver
-    :parameters (?agt - agent ?veh - vehicle ?loc - location)
-    :precondition (and 
-        (in ?agt ?loc)
-        (in ?veh ?loc)
-        (driver_available ?veh)
-    )
-    :effect (and 
-        (not (in ?agt ?loc))
-        (not (driver_available ?veh))
-        (driver ?agt ?veh)
     )
 )
 
@@ -96,19 +82,6 @@
     )
 )
 
-(:action driver_disembark
-    :parameters (?agt - agent ?veh - vehicle ?loc - location)
-    :precondition (and 
-        (in ?veh ?loc)
-        (driver ?agt ?veh)
-    )
-    :effect (and 
-        (in ?agt ?loc)
-        (not (driver ?agt ?veh))
-        (driver_available ?veh)
-    )
-)
-
 (:action passenger_disembark
     :parameters (?agt - agent ?veh - vehicle ?loc - location)
     :precondition (and 
@@ -122,12 +95,44 @@
     )
 )
 
+; Transport actions
+
+(:action board_driver
+    :parameters (?agt - agent ?veh - vehicle ?loc - location ?state - transportation_state)
+    :precondition (and 
+        (in ?agt ?loc)
+        (in ?veh ?loc)
+        (driver_available ?veh)
+        (state ?agt ?state)
+    )
+    :effect (and 
+        (not (in ?agt ?loc))
+        (not (driver_available ?veh))
+        (driver ?agt ?veh)
+    )
+)
+
+(:action driver_disembark
+    :parameters (?agt - agent ?veh - vehicle ?loc - location ?state - transportation_state)
+    :precondition (and 
+        (in ?veh ?loc)
+        (driver ?agt ?veh)
+        (state ?agt ?state)
+    )
+    :effect (and 
+        (in ?agt ?loc)
+        (not (driver ?agt ?veh))
+        (driver_available ?veh)
+    )
+)
+
 (:action drive_vehicle
-    :parameters (?agt - agent ?veh - vehicle ?loc1 - location ?loc2 - location)
+    :parameters (?agt - agent ?veh - vehicle ?loc1 - location ?loc2 - location ?state - transportation_state)
     :precondition (and 
         (driver ?agt ?veh)
         (in ?veh ?loc1)
         (adjacent ?loc1 ?loc2)
+        (state ?agt ?state)
     )
     :effect (and 
         (not (in ?veh ?loc1))
@@ -194,6 +199,39 @@
     )
 )
 
+; Crane actions
+
+(:action unload_ship
+    :parameters (?ship - ship ?crane - crane ?container - container ?agt - agent ?dock - dock)
+    :precondition (and
+        (in ?container ?ship)
+        (adjacent ?ship ?dock)
+        (in ?crane ?dock)
+        (operating ?agt ?crane)
+        (unloaded ?crane)
+    )
+    :effect (and 
+        (not (in ?container ?ship))
+        (loaded ?crane ?container)
+        (not (unloaded ?crane))
+    )
+)
+
+(:action unload_crane
+    :parameters (?crane - crane ?container - container ?agt - agent ?dock - dock)
+    :precondition (and 
+        (in ?crane ?dock)
+        (loaded ?crane ?container)
+        (operating ?agt ?crane)
+    )
+    :effect (and 
+        (not (loaded ?crane ?container))
+        (in ?container ?dock)
+    )
+)
+
+; Dock and Transport Joining actions
+
 (:action load_truck
     :parameters (?container - container ?truck_crane - truck_crane ?truck - truck ?agt1 - agent ?agt2 - agent ?loc - location ?state1 - dock_state ?state2 - transportation_state)
     :precondition (and
@@ -251,12 +289,13 @@
 )
 
 (:action load_van
-    :parameters (?cargo - cargo ?van - van ?agt - agent ?dist - distribution_centre)
+    :parameters (?cargo - cargo ?van - van ?agt - agent ?dist - distribution_centre ?state - distribution_state)
     :precondition (and 
         (in ?cargo ?dist)
         (in ?van ?dist)
         (in ?agt ?dist)
         (unloaded ?van)
+        (state ?agt ?state)
     )
     :effect (and
         (not (unloaded ?van))
@@ -266,11 +305,12 @@
 )
 
 (:action unload_van
-    :parameters (?cargo - cargo ?van - van ?agt - agent ?loc - location)
+    :parameters (?cargo - cargo ?van - van ?agt - agent ?loc - location ?state - distribution_state)
     :precondition (and 
         (in ?van ?loc)
         (loaded ?van ?cargo)
         (in ?agt ?loc)
+        (state ?agt ?state)
     )
     :effect (and
         (not (loaded ?van ?cargo))
@@ -279,36 +319,6 @@
     )
 )
 
-; Crane actions
-
-(:action unload_ship
-    :parameters (?ship - ship ?crane - crane ?container - container ?agt - agent ?dock - dock)
-    :precondition (and
-        (in ?container ?ship)
-        (adjacent ?ship ?dock)
-        (in ?crane ?dock)
-        (operating ?agt ?crane)
-        (unloaded ?crane)
-    )
-    :effect (and 
-        (not (in ?container ?ship))
-        (loaded ?crane ?container)
-        (not (unloaded ?crane))
-    )
-)
-
-(:action unload_crane
-    :parameters (?crane - crane ?container - container ?agt - agent ?dock - dock)
-    :precondition (and 
-        (in ?crane ?dock)
-        (loaded ?crane ?container)
-        (operating ?agt ?crane)
-    )
-    :effect (and 
-        (not (loaded ?crane ?container))
-        (in ?container ?dock)
-    )
-)
 
 ; State Operations
 
