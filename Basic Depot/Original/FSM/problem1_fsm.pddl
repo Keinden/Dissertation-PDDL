@@ -12,10 +12,6 @@
     agent1 agent2 - agent
     truck1 - truck
     van1 van2 - van
-    IDLE_STATE - idle_state
-    DOCK_STATE - dock_state
-    DISTRIBUTION_STATE - distribution_state
-    TRANSPORTATION_STATE - transportation_state
 )
 
 (:init
@@ -68,8 +64,8 @@
     (unloaded van2)
 
     ; Initial States
-    (agent_state agent1 IDLE_STATE)
-    (agent_state agent2 IDLE_STATE)
+    (idle agent1)
+    (idle agent2)
 )
 
 (:goal (and
@@ -83,6 +79,5 @@
     (in van2 distribution_centre1)
     (in agent1 port1)
     (in agent2 port1)
-
 ))
 )

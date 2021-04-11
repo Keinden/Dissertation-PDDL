@@ -211,7 +211,7 @@
         (in ?crane ?dock)
         (operating ?agt ?crane)
         (unloaded ?crane)
-        (port_state ?agt
+        (port_state ?agt)
     )
     :effect (and 
         (not (in ?container ?ship))

@@ -1,0 +1,75 @@
+(board_passenger agent1 truck1 port1)
+(board_driver agent2 truck1 port1)
+(drive_vehicle agent2 truck1 port1 dock1)
+(passenger_disembark agent1 truck1 dock1)
+(operate_machine crane1 dock1 agent1)
+(unload_ship ship1 crane1 container1 agent1 dock1)
+(unload_crane crane1 container1 agent1 dock1)
+(disembark_machine crane1 dock1 agent1)
+(operate_machine truck-crane1 dock1 agent1)
+(lift_container truck-crane1 container1 agent1 dock1)
+(load_truck container1 truck-crane1 truck1 agent1 agent2 dock1)
+(disembark_machine truck-crane1 dock1 agent1)
+(board_passenger agent1 truck1 dock1)
+(drive_vehicle agent2 truck1 dock1 port1)
+(drive_vehicle agent2 truck1 port1 distribution_centre1)
+(operate_machine truck-crane2 distribution_centre1 agent3)
+(unload_truck container1 truck-crane2 truck1 agent3 agent2 distribution_centre1)
+(drop_container truck-crane2 container1 agent3 distribution_centre1)
+(unload_container container1 cargo1 agent4 distribution_centre1)
+(unload_container container1 cargo2 agent4 distribution_centre1)
+(unload_container container1 cargo3 agent4 distribution_centre1)
+(unload_container container1 cargo4 agent4 distribution_centre1)
+(unload_container container1 cargo5 agent4 distribution_centre1)
+(drive_vehicle agent2 truck1 distribution_centre1 distributor2)
+(passenger_disembark agent1 truck1 distributor2)
+(load_van cargo3 van1 agent4 distribution_centre1)
+(board_driver agent4 van1 distribution_centre1)
+(drive_vehicle agent4 van1 distribution_centre1 distributor2)
+(unload_van cargo3 van1 agent1 distributor2)
+(drive_vehicle agent4 van1 distributor2 distribution_centre1)
+(disembark_machine truck-crane2 distribution_centre1 agent3)
+(load_van cargo4 van1 agent3 distribution_centre1)
+(drive_vehicle agent4 van1 distribution_centre1 distributor2)
+(unload_van cargo4 van1 agent1 distributor2)
+(drive_vehicle agent4 van1 distributor2 distribution_centre1)
+(load_van cargo5 van1 agent3 distribution_centre1)
+(drive_vehicle agent4 van1 distribution_centre1 distributor2)
+(unload_van cargo5 van1 agent1 distributor2)
+(drive_vehicle agent4 van1 distributor2 distribution_centre1)
+(board_passenger agent1 truck1 distributor2)
+(drive_vehicle agent2 truck1 distributor2 distribution_centre1)
+(drive_vehicle agent2 truck1 distribution_centre1 port1)
+(passenger_disembark agent1 truck1 port1)
+(driver_disembark agent2 truck1 port1)
+(load_van cargo1 van1 agent3 distribution_centre1)
+(drive_vehicle agent4 van1 distribution_centre1 distributor1)
+(driver_disembark agent4 van1 distributor1)
+(unload_van cargo1 van1 agent4 distributor1)
+(board_driver agent4 van1 distributor1)
+(drive_vehicle agent4 van1 distributor1 distribution_centre1)
+(load_van cargo2 van1 agent3 distribution_centre1)
+(drive_vehicle agent4 van1 distribution_centre1 distributor1)
+(driver_disembark agent4 van1 distributor1)
+(unload_van cargo2 van1 agent4 distributor1)
+(board_driver agent4 van1 distributor1)
+(drive_vehicle agent4 van1 distributor1 distribution_centre1)
+(driver_disembark agent4 van1 distribution_centre1)
+; cost = 57 (unit cost)
+[t=3742.36s, 12387980 KB] Plan length: 57 step(s).
+[t=3742.36s, 12387980 KB] Plan cost: 57
+[t=3742.36s, 12387980 KB] Expanded 107398174 state(s).
+[t=3742.36s, 12387980 KB] Reopened 649533 state(s).
+[t=3742.36s, 12387980 KB] Evaluated 262740642 state(s).
+[t=3742.36s, 12387980 KB] Evaluations: 262740642
+[t=3742.36s, 12387980 KB] Generated 998514617 state(s).
+[t=3742.36s, 12387980 KB] Dead ends: 12380229 state(s).
+[t=3742.36s, 12387980 KB] Expanded until last jump: 107398157 state(s).
+[t=3742.36s, 12387980 KB] Reopened until last jump: 649533 state(s).
+[t=3742.36s, 12387980 KB] Evaluated until last jump: 262740549 state(s).
+[t=3742.36s, 12387980 KB] Generated until last jump: 998514467 state(s).
+[t=3742.36s, 12387980 KB] Number of registered states: 262740642
+[t=3742.36s, 12387980 KB] Int hash set load factor: 262740642/536870912 = 0.489393
+[t=3742.36s, 12387980 KB] Int hash set resizes: 29
+[t=3742.36s, 12387980 KB] Search time: 3742.35s
+[t=3742.36s, 12387980 KB] Total time: 3742.36s
