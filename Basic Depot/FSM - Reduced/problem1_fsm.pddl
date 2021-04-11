@@ -1,52 +1,43 @@
-(define (problem dock3) (:domain dock)
+(define (problem dock1_fsm) (:domain dock_fsm)
 (:objects 
-    port1 - port
     dock1 - dock
-    ship1 - ship
     distribution_centre1 - distribution_centre
     distributor1 distributor2 - distributor
     container1 - container
-    cargo1 cargo2 cargo3 cargo4 cargo5 - cargo
+    cargo1 cargo2 cargo3 cargo4 - cargo
     truck-crane1 truck-crane2 - truck_crane
-    crane1 - crane
-    agent1 agent2 agent3 agnet4- agent
+    agent1 agent2 - agent
     truck1 - truck
     van1 van2 - van
+
+    IDLE_STATE - idle_state
+    DOCK_STATE - dock_state
+    DISTRIBUTION_STATE - distribution_state
+    TRANSPORTATION_STATE - transportation_state
 )
 
 (:init
     ; Map Layout
-    (adjacent port1 dock1)
-    (adjacent dock1 port1)
-    (adjacent port1 distribution_centre1)
-    (adjacent distribution_centre1 port1)
+    (adjacent dock1 distribution_centre1)
+    (adjacent distribution_centre1 dock1)
     (adjacent distributor1 distribution_centre1)
     (adjacent distribution_centre1 distributor1)
     (adjacent distributor2 distribution_centre1)
     (adjacent distribution_centre1 distributor2)
     
     ; Ship prep
-    (adjacent ship1 dock1)
-    (in container1 ship1)
+    (in container1 dock1)
     (in cargo1 container1)
     (in cargo2 container1)
     (in cargo3 container1)
     (in cargo4 container1)
-    (in cargo5 container1)
-
-    ; Port prep
-    (in crane1 dock1)
-    (unloaded crane1)
-    (operator_available crane1)
 
     ; Agent Prep
-    (in agent1 port1)
-    (in agent2 port1)
-    (in agent3 distribution_centre1)
-    (in agent4 distribution_centre1)
+    (in agent1 dock1)
+    (in agent2 dock1)
 
     ; Vehicle Locations
-    (in truck1 port1)
+    (in truck1 dock1)
     (in truck-crane1 dock1)
     (in truck-crane2 distribution_centre1)
     (in van1 distribution_centre1)
@@ -56,9 +47,6 @@
     (driver_available truck1)
     (driver_available van1)
     (driver_available van2)
-    (driver_available van3)
-    (driver_available van4)
-    (driver_available van5)
     (operator_available truck-crane1)
     (operator_available truck-crane2)
     (passenger_available truck1)
@@ -67,20 +55,20 @@
     (unloaded truck1)
     (unloaded van1)
     (unloaded van2)
+
+    ; Initial States
+    (agent_state agent1 IDLE_STATE)
+    (agent_state agent2 IDLE_STATE)
 )
 
 (:goal (and
+    (in truck1 dock1)
+    (in container1 dock1)
     (in cargo1 distributor1)
     (in cargo2 distributor1)
     (in cargo3 distributor2)
     (in cargo4 distributor2)
-    (in cargo5 distributor2)
-    (in truck1 port1)
-    (in van1 distribution_centre1)
-    (in van2 distribution_centre1)
-    (in agent1 port1)
-    (in agent2 port1)
-    (in agent3 distribution_centre1)
-    (in agent4 distribution_centre1)
+    (in agent1 dock1)
+    (in agent2 dock1)
 ))
 )
