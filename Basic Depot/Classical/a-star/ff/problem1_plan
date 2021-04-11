@@ -1,0 +1,81 @@
+(board_passenger agent1 truck1 port1)
+(board_driver agent2 truck1 port1)
+(drive_vehicle agent2 truck1 port1 dock1)
+(passenger_disembark agent1 truck1 dock1)
+(operate_machine crane1 dock1 agent1)
+(unload_ship ship1 crane1 container1 agent1 dock1)
+(unload_crane crane1 container1 agent1 dock1)
+(disembark_machine crane1 dock1 agent1)
+(operate_machine truck-crane1 dock1 agent1)
+(lift_container truck-crane1 container1 agent1 dock1)
+(load_truck container1 truck-crane1 truck1 agent1 agent2 dock1)
+(disembark_machine truck-crane1 dock1 agent1)
+(board_passenger agent1 truck1 dock1)
+(drive_vehicle agent2 truck1 dock1 port1)
+(drive_vehicle agent2 truck1 port1 distribution_centre1)
+(passenger_disembark agent1 truck1 distribution_centre1)
+(operate_machine truck-crane2 distribution_centre1 agent1)
+(unload_truck container1 truck-crane2 truck1 agent1 agent2 distribution_centre1)
+(drop_container truck-crane2 container1 agent1 distribution_centre1)
+(disembark_machine truck-crane2 distribution_centre1 agent1)
+(unload_container container1 cargo1 agent1 distribution_centre1)
+(unload_container container1 cargo2 agent1 distribution_centre1)
+(unload_container container1 cargo3 agent1 distribution_centre1)
+(board_driver agent1 van2 distribution_centre1)
+(driver_disembark agent2 truck1 distribution_centre1)
+(unload_container container1 cargo4 agent2 distribution_centre1)
+(load_van cargo1 van2 agent2 distribution_centre1)
+(drive_vehicle agent1 van2 distribution_centre1 distributor1)
+(driver_disembark agent1 van2 distributor1)
+(unload_van cargo1 van2 agent1 distributor1)
+(board_driver agent1 van2 distributor1)
+(unload_container container1 cargo5 agent2 distribution_centre1)
+(drive_vehicle agent1 van2 distributor1 distribution_centre1)
+(load_van cargo2 van2 agent2 distribution_centre1)
+(drive_vehicle agent1 van2 distribution_centre1 distributor1)
+(driver_disembark agent1 van2 distributor1)
+(unload_van cargo2 van2 agent1 distributor1)
+(board_driver agent1 van2 distributor1)
+(drive_vehicle agent1 van2 distributor1 distribution_centre1)
+(load_van cargo3 van2 agent2 distribution_centre1)
+(drive_vehicle agent1 van2 distribution_centre1 distributor2)
+(driver_disembark agent1 van2 distributor2)
+(unload_van cargo3 van2 agent1 distributor2)
+(load_van cargo4 van1 agent2 distribution_centre1)
+(board_driver agent2 van1 distribution_centre1)
+(drive_vehicle agent2 van1 distribution_centre1 distributor2)
+(unload_van cargo4 van1 agent1 distributor2)
+(drive_vehicle agent2 van1 distributor2 distribution_centre1)
+(board_driver agent1 van2 distributor2)
+(driver_disembark agent2 van1 distribution_centre1)
+(drive_vehicle agent1 van2 distributor2 distribution_centre1)
+(load_van cargo5 van2 agent2 distribution_centre1)
+(board_driver agent2 truck1 distribution_centre1)
+(drive_vehicle agent1 van2 distribution_centre1 distributor2)
+(driver_disembark agent1 van2 distributor2)
+(unload_van cargo5 van2 agent1 distributor2)
+(board_driver agent1 van2 distributor2)
+(drive_vehicle agent1 van2 distributor2 distribution_centre1)
+(driver_disembark agent1 van2 distribution_centre1)
+(board_passenger agent1 truck1 distribution_centre1)
+(drive_vehicle agent2 truck1 distribution_centre1 port1)
+(passenger_disembark agent1 truck1 port1)
+(driver_disembark agent2 truck1 port1)
+; cost = 63 (unit cost)
+[t=79.1747s, 399480 KB] Plan length: 63 step(s).
+[t=79.1747s, 399480 KB] Plan cost: 63
+[t=79.1747s, 399480 KB] Expanded 5155119 state(s).
+[t=79.1747s, 399480 KB] Reopened 71814 state(s).
+[t=79.1747s, 399480 KB] Evaluated 8030184 state(s).
+[t=79.1747s, 399480 KB] Evaluations: 8030184
+[t=79.1747s, 399480 KB] Generated 23717782 state(s).
+[t=79.1747s, 399480 KB] Dead ends: 593369 state(s).
+[t=79.1747s, 399480 KB] Expanded until last jump: 5154868 state(s).
+[t=79.1747s, 399480 KB] Reopened until last jump: 71814 state(s).
+[t=79.1747s, 399480 KB] Evaluated until last jump: 8029712 state(s).
+[t=79.1747s, 399480 KB] Generated until last jump: 23716654 state(s).
+[t=79.1747s, 399480 KB] Number of registered states: 8030184
+[t=79.1747s, 399480 KB] Int hash set load factor: 8030184/16777216 = 0.478636
+[t=79.1747s, 399480 KB] Int hash set resizes: 24
+[t=79.1747s, 399480 KB] Search time: 79.1682s
+[t=79.1747s, 399480 KB] Total time: 79.1747s

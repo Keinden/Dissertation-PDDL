@@ -9,7 +9,7 @@
     cargo1 cargo2 cargo3 cargo4 cargo5 - cargo
     truck-crane1 truck-crane2 - truck_crane
     crane1 - crane
-    agent1 agent2 agent3 agnet4- agent
+    agent1 agent2 agent3 agent4 - agent
     truck1 - truck
     van1 van2 - van
 )
