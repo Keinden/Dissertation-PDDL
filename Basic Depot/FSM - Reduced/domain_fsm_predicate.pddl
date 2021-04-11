@@ -43,7 +43,7 @@
     ; State related
     (idle ?agt - agent)
     (transportation ?agt - agent)
-    (dock ?agt - agent)
+    (port ?agt - agent)
     (distribution ?agt - agent)
 )
 
@@ -142,7 +142,7 @@
         (in ?agt ?loc)
         (in ?machine ?loc)
         (operator_available ?machine)
-        (dock ?agt)
+        (port ?agt)
     )
     :effect (and 
         (not (in ?agt ?loc))
@@ -155,7 +155,7 @@
     :precondition (and 
         (in ?machine ?loc)
         (operating ?agt ?machine)
-        (dock ?agt)
+        (port ?agt)
     )
     :effect (and 
         (in ?agt ?loc)
@@ -175,7 +175,7 @@
         (driver ?agt2 ?truck)
         (in ?container ?loc)
         (unloaded ?truck)
-        (dock ?agt1)
+        (port ?agt1)
         (transportation ?agt2)
     )
     :effect (and 
@@ -193,7 +193,7 @@
         (operating ?agt1 ?truck_crane)
         (driver ?agt2 ?truck)
         (loaded ?truck ?container)
-        (dock ?agt1)
+        (port ?agt1)
         (transportation ?agt2)
     )
     :effect (and 
@@ -252,19 +252,13 @@
 
 ; Change states
 
-(:action change_out_state
+(:action change_out_distribution
     :parameters (?agt - agent)
-    :precondition (and 
-        (exists 
-            (distribution ?agt)
-            (transportation ?agt)
-            (dock ?agt)
-        )
+    :precondition (and
+        (distribution ?agt)
     )
     :effect (and 
         (not (distribution ?agt))
-        (not (transportation ?agt))
-        (not (dock ?agt))
         (idle ?agt)
     )
 )
@@ -280,6 +274,17 @@
     )
 )
 
+(:action change_out_dock
+    :parameters (?agt - agent)
+    :precondition (and
+        (port ?agt)
+    )
+    :effect (and 
+        (not (port ?agt))
+        (idle ?agt)
+    )
+)
+
 (:action change_into_dock
     :parameters (?agt - agent)
     :precondition (and
@@ -287,7 +292,18 @@
     )
     :effect (and 
         (not (idle ?agt))
-        (dock ?agt)
+        (port ?agt)
+    )
+)
+
+(:action change_out_transportation
+    :parameters (?agt - agent)
+    :precondition (and
+        (transportation ?agt)
+    )
+    :effect (and 
+        (not (transportation ?agt))
+        (idle ?agt)
     )
 )
 
