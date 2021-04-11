@@ -1,6 +1,6 @@
 (define (domain dock_fsm)
 
-(:requirements :strips :typing :negative-preconditions :equality)
+(:requirements :strips :typing :negative-preconditions :equality :disjunctive-preconditions)
 (:types
     location
     dock distribution_centre distributor - location
@@ -30,7 +30,6 @@
     (loaded ?wkvhle - work_vehicle ?container - container)
     (loaded ?distvhle - distribution_vehicle ?cargo - cargo)
     (unloaded ?vehicle - vehicle)
-    (unloaded ?machine - machine)
     (driver_available ?vehicle - vehicle)
     (passenger_available ?vehicle - vehicle)
     (driver ?driver - agent ?vehicle - vehicle)
@@ -252,12 +251,16 @@
 
 ; Change states
 
-(:action change_out_distribution
+(:action change_out_state
     :parameters (?agt - agent)
-    :precondition (and
+    :precondition (or
+        (transportation ?agt)
+        (port ?agt)
         (distribution ?agt)
     )
     :effect (and 
+        (not (transportation ?agt))
+        (not (port ?agt))        
         (not (distribution ?agt))
         (idle ?agt)
     )
@@ -274,17 +277,6 @@
     )
 )
 
-(:action change_out_dock
-    :parameters (?agt - agent)
-    :precondition (and
-        (port ?agt)
-    )
-    :effect (and 
-        (not (port ?agt))
-        (idle ?agt)
-    )
-)
-
 (:action change_into_dock
     :parameters (?agt - agent)
     :precondition (and
@@ -293,17 +285,6 @@
     :effect (and 
         (not (idle ?agt))
         (port ?agt)
-    )
-)
-
-(:action change_out_transportation
-    :parameters (?agt - agent)
-    :precondition (and
-        (transportation ?agt)
-    )
-    :effect (and 
-        (not (transportation ?agt))
-        (idle ?agt)
     )
 )
 
