@@ -6,7 +6,7 @@
     distribution_centre1 - distribution_centre
     distributor1 distributor2 - distributor
     container1 - container
-    cargo1 cargo2 cargo3 cargo4 - cargo
+    cargo1 cargo2 cargo3 cargo4 cargo5 - cargo
     truck-crane1 truck-crane2 - truck_crane
     crane1 - crane
     agent1 agent2 - agent
@@ -32,6 +32,7 @@
     (in cargo2 container1)
     (in cargo3 container1)
     (in cargo4 container1)
+    (in cargo5 container1)
 
     ; Port prep
     (in crane1 dock1)
@@ -68,6 +69,7 @@
     (in cargo2 distributor1)
     (in cargo3 distributor2)
     (in cargo4 distributor2)
+    (in cargo5 distributor2)
     (in truck1 port1)
     (in van1 distribution_centre1)
     (in van2 distribution_centre1)
