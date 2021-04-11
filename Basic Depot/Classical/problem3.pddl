@@ -77,6 +77,7 @@
     (in cargo5 distributor2)
     (in truck1 port1)
     (in van1 distribution_centre1)
+    (in van2 distribution_centre1)
     (in agent1 port1)
     (in agent2 port1)
     (in agent3 distribution_centre1)
