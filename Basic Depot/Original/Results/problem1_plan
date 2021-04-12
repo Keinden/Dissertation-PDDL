@@ -1,0 +1,67 @@
+(board_passenger agent2 truck1 port1)
+(board_driver agent1 truck1 port1)
+(drive_vehicle agent1 truck1 port1 dock1)
+(passenger_disembark agent2 truck1 dock1)
+(operate_machine crane1 dock1 agent2)
+(unload_ship ship1 crane1 container1 agent2 dock1)
+(unload_crane crane1 container1 agent2 dock1)
+(disembark_machine crane1 dock1 agent2)
+(operate_machine truck-crane1 dock1 agent2)
+(lift_container truck-crane1 container1 agent2 dock1)
+(load_truck container1 truck-crane1 truck1 agent2 agent1 dock1)
+(disembark_machine truck-crane1 dock1 agent2)
+(board_passenger agent2 truck1 dock1)
+(drive_vehicle agent1 truck1 dock1 port1)
+(drive_vehicle agent1 truck1 port1 distribution_centre1)
+(passenger_disembark agent2 truck1 distribution_centre1)
+(operate_machine truck-crane2 distribution_centre1 agent2)
+(unload_truck container1 truck-crane2 truck1 agent2 agent1 distribution_centre1)
+(drop_container truck-crane2 container1 agent2 distribution_centre1)
+(disembark_machine truck-crane2 distribution_centre1 agent2)
+(unload_container container1 cargo1 agent2 distribution_centre1)
+(unload_container container1 cargo2 agent2 distribution_centre1)
+(unload_container container1 cargo3 agent2 distribution_centre1)
+(load_van cargo3 van1 agent2 distribution_centre1)
+(board_driver agent2 van1 distribution_centre1)
+(drive_vehicle agent2 van1 distribution_centre1 distributor2)
+(driver_disembark agent2 van1 distributor2)
+(unload_van cargo3 van1 agent2 distributor2)
+(board_driver agent2 van1 distributor2)
+(drive_vehicle agent2 van1 distributor2 distribution_centre1)
+(driver_disembark agent1 truck1 distribution_centre1)
+(load_van cargo1 van1 agent1 distribution_centre1)
+(drive_vehicle agent2 van1 distribution_centre1 distributor1)
+(driver_disembark agent2 van1 distributor1)
+(unload_van cargo1 van1 agent2 distributor1)
+(board_driver agent2 van1 distributor1)
+(drive_vehicle agent2 van1 distributor1 distribution_centre1)
+(load_van cargo2 van1 agent1 distribution_centre1)
+(board_driver agent1 truck1 distribution_centre1)
+(drive_vehicle agent2 van1 distribution_centre1 distributor1)
+(driver_disembark agent2 van1 distributor1)
+(unload_van cargo2 van1 agent2 distributor1)
+(board_driver agent2 van1 distributor1)
+(drive_vehicle agent2 van1 distributor1 distribution_centre1)
+(driver_disembark agent2 van1 distribution_centre1)
+(board_passenger agent2 truck1 distribution_centre1)
+(drive_vehicle agent1 truck1 distribution_centre1 port1)
+(driver_disembark agent1 truck1 port1)
+(passenger_disembark agent2 truck1 port1)
+; cost = 49 (unit cost)
+[t=0.978998s, 30984 KB] Plan length: 49 step(s).
+[t=0.978998s, 30984 KB] Plan cost: 49
+[t=0.978998s, 30984 KB] Expanded 68680 state(s).
+[t=0.978998s, 30984 KB] Reopened 1115 state(s).
+[t=0.978998s, 30984 KB] Evaluated 116867 state(s).
+[t=0.978998s, 30984 KB] Evaluations: 116867
+[t=0.978998s, 30984 KB] Generated 328946 state(s).
+[t=0.978998s, 30984 KB] Dead ends: 4085 state(s).
+[t=0.978998s, 30984 KB] Expanded until last jump: 68554 state(s).
+[t=0.978998s, 30984 KB] Reopened until last jump: 1115 state(s).
+[t=0.978998s, 30984 KB] Evaluated until last jump: 116636 state(s).
+[t=0.978998s, 30984 KB] Generated until last jump: 328391 state(s).
+[t=0.978998s, 30984 KB] Number of registered states: 116867
+[t=0.978998s, 30984 KB] Int hash set load factor: 116867/262144 = 0.445812
+[t=0.978998s, 30984 KB] Int hash set resizes: 18
+[t=0.978998s, 30984 KB] Search time: 0.97439s
+[t=0.978998s, 30984 KB] Total time: 0.978998s

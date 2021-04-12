@@ -55,18 +55,6 @@
 ; Actions
 
 ; Universal Actions
-(:action walk
-    :parameters (?agt - agent ?loc1 - location ?loc2 - location)
-    :precondition (and
-        (in ?agt ?loc2)
-        (adjacent ?loc1 ?loc2)
-    )
-    :effect (and
-        (not (in ?agt ?loc1))
-        (in ?agt ?loc2)
-    )
-)
-
 (:action board_passenger
     :parameters (?agt - agent ?veh - vehicle ?loc - location)
     :precondition (and 
@@ -330,12 +318,12 @@
     :parameters (?agt - agent)
     :precondition (or
         (transportation ?agt)
-        (port ?agt)
+        (port_state ?agt)
         (distribution ?agt)
     )
     :effect (and 
         (not (transportation ?agt))
-        (not (port ?agt))        
+        (not (port_state ?agt))        
         (not (distribution ?agt))
         (idle ?agt)
     )
@@ -359,7 +347,7 @@
     )
     :effect (and 
         (not (idle ?agt))
-        (port ?agt)
+        (port_state ?agt)
     )
 )
 

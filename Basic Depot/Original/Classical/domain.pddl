@@ -47,18 +47,6 @@
 ; Actions
 
 ; General Actions
-(:action walk
-    :parameters (?agt - agent ?loc1 - location ?loc2 - location)
-    :precondition (and
-        (in ?agt ?loc2)
-        (adjacent ?loc1 ?loc2)
-    )
-    :effect (and
-        (not (in ?agt ?loc1))
-        (in ?agt ?loc2)
-    )
-)
-
 (:action board_driver
     :parameters (?agt - agent ?veh - vehicle ?loc - location)
     :precondition (and 
