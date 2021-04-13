@@ -59,6 +59,10 @@
     :precondition (and
         (in ?agt ?loc1)
         (in ?wood ?loc1)
+        (or
+            (wood-process ?agt)
+            (component-process ?agt)
+        )
     )
     :effect (and
         (not (in ?wood ?loc1))
@@ -73,6 +77,7 @@
         (in ?agt ?loc)
         (in ?wood ?loc)
         (raw ?wood)
+        (wood-process ?agt)
     )
     :effect (and 
         (not (raw ?wood))
@@ -87,6 +92,7 @@
         (in ?agt ?loc)
         (in ?wood ?loc)
         (raw ?wood)
+        (wood-process ?agt)
     )
     :effect (and 
         (not (raw ?wood))
@@ -101,6 +107,7 @@
         (in ?agt ?loc)
         (in ?wood ?loc)
         (raw ?wood)
+        (wood-process ?agt)
     )
     :effect (and 
         (not (raw ?wood))
@@ -115,6 +122,7 @@
         (in ?wood ?loc)
         (in ?chs ?loc)
         (medium ?wood)
+        (component-process ?agt)
     )
     :effect (and 
         (not (medium ?wood))
@@ -129,6 +137,7 @@
         (in ?wood ?loc)
         (in ?pln ?loc)
         (medium ?wood)
+        (component-process ?agt)
     )
     :effect (and 
         (not (large ?wood))
@@ -143,6 +152,7 @@
         (in ?wood ?loc)
         (in ?pln ?loc)
         (large ?wood)
+        (component-process ?agt)
     )
     :effect (and 
         (not (large ?wood))
@@ -159,6 +169,7 @@
         (in ?bnd ?loc)
         (in ?chs ?loc)
         (small ?wood)
+        (component-process ?agt)
     )
     :effect (and
         (not (small ?wood))
@@ -180,6 +191,7 @@
         (seat ?wood3)
         (back ?wood4)
         (order ?chr)
+        (assembly-process ?agt)
     )
     :effect (and
         (not (order ?chr))
@@ -206,6 +218,10 @@
         (in ?agt ?loc1)
         (in ?chr ?loc1)
         (assembled ?chr)
+        (or
+            (assembly-process ?agt)
+            (finish-process ?agt)
+        )
     )
     :effect (and
         (not (in ?chr ?loc1))
@@ -220,6 +236,7 @@
         (in ?chr ?loc)
         (in ?ptbh ?loc)
         (assembled ?chr)
+        (finish-process ?agt)
     )
     :effect (and
         (not (assembled ?chr))
@@ -244,5 +261,48 @@
     )
 )
 
+(:action change_into_assembly
+    :parameters (?agt - agent)
+    :precondition (and
+        (idle ?agt)
+    )
+    :effect (and
+        (not (idle ?agt))
+        (assembly-process ?agt)
+    )
+)
+
+(:action change_into_component
+    :parameters (?agt - agent)
+    :precondition (and
+        (idle ?agt)
+    )
+    :effect (and
+        (not (idle ?agt))
+        (component-process ?agt)
+    )
+)
+
+(:action change_into_wood
+    :parameters (?agt - agent)
+    :precondition (and
+        (idle ?agt)
+    )
+    :effect (and
+        (not (idle ?agt))
+        (wood-process ?agt)
+    )
+)
+
+(:action change_into_finish
+    :parameters (?agt - agent)
+    :precondition (and
+        (idle ?agt)
+    )
+    :effect (and
+        (not (idle ?agt))
+        (finish-process ?agt)
+    )
+)
 
 )
