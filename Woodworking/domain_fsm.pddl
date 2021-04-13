@@ -1,6 +1,6 @@
-(define (domain woodworking)
+(define (domain woodworking_fsm)
 
-(:requirements :strips :typing :conditional-effects :negative-preconditions :equality)
+(:requirements :strips :typing :negative-preconditions :equality :disjunctive-preconditions)
 
 (:types
     wood
@@ -35,6 +35,12 @@
     (chair-arm ?chair - chair ?arm - wood)
 
     (finished ?chair - chair ?clr - colour)
+
+    (idle ?agt)
+    (wood-process ?agt)
+    (component-process ?agt)
+    (assembly-process ?agt)
+    (finish-process ?agt)
 )
 
 (:action change-position
@@ -220,5 +226,23 @@
         (finished ?chr ?clr)
     )
 )
+
+(:action change_out_state
+    :parameters (?agt - agent)
+    :precondition (or
+        (assembly-process ?agt)
+        (component-process ?agt)
+        (wood-process ?agt)
+        (finish-process ?agt)
+    )
+    :effect (and
+        (idle ?agt)
+        (not (assembly-process ?agt))
+        (not (component-process ?agt))
+        (not (wood-process ?agt))
+        (not (finish-process ?agt))
+    )
+)
+
 
 )
