@@ -1,0 +1,891 @@
+desc: (none)
+cmd: ./ff -o ../../Depot/New Design/Satisficing/Classical/domain.pddl -f ../../Depot/New Design/Satisficing/Classical/problem3.pddl
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=1
+#-----------
+time=165482
+mem_heap_B=1024
+mem_heap_extra_B=8
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=2
+#-----------
+time=304310
+mem_heap_B=25458
+mem_heap_extra_B=2942
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=3
+#-----------
+time=390648
+mem_heap_B=27568
+mem_heap_extra_B=4616
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=4
+#-----------
+time=533725
+mem_heap_B=30884
+mem_heap_extra_B=7116
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=5
+#-----------
+time=640694
+mem_heap_B=33699
+mem_heap_extra_B=9445
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=6
+#-----------
+time=843042
+mem_heap_B=54260
+mem_heap_extra_B=12812
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=7
+#-----------
+time=980115
+mem_heap_B=59134
+mem_heap_extra_B=16746
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=8
+#-----------
+time=1068295
+mem_heap_B=61208
+mem_heap_extra_B=18304
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=9
+#-----------
+time=1202274
+mem_heap_B=60443
+mem_heap_extra_B=22037
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=10
+#-----------
+time=1386651
+mem_heap_B=56417
+mem_heap_extra_B=18583
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=11
+#-----------
+time=1791556
+mem_heap_B=56440
+mem_heap_extra_B=17288
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=12
+#-----------
+time=1936000
+mem_heap_B=64755
+mem_heap_extra_B=16877
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=13
+#-----------
+time=2027881
+mem_heap_B=323091
+mem_heap_extra_B=19277
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=14
+#-----------
+time=2174452
+mem_heap_B=403059
+mem_heap_extra_B=29789
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=15
+#-----------
+time=2287153
+mem_heap_B=414395
+mem_heap_extra_B=28917
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=16
+#-----------
+time=2448890
+mem_heap_B=423339
+mem_heap_extra_B=28229
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=17
+#-----------
+time=2570158
+mem_heap_B=430099
+mem_heap_extra_B=27709
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=18
+#-----------
+time=2750964
+mem_heap_B=431115
+mem_heap_extra_B=27645
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=19
+#-----------
+time=2875778
+mem_heap_B=437243
+mem_heap_extra_B=32117
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=20
+#-----------
+time=3075622
+mem_heap_B=446563
+mem_heap_extra_B=37077
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=21
+#-----------
+time=3278751
+mem_heap_B=498283
+mem_heap_extra_B=50893
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=22
+#-----------
+time=3418927
+mem_heap_B=510511
+mem_heap_extra_B=62401
+mem_stacks_B=0
+heap_tree=detailed
+n18: 510511 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n1: 240000 0x11BAA5: split_domain (inst_pre.c:2149)
+  n0: 240000 0x1097A9: main (main.c:615)
+ n0: 55419 in 48 places, all below massif's threshold (1.00%)
+ n1: 51456 0x10B396: new_Action (memory.c:603)
+  n1: 51456 0x126C23: perform_reachability_analysis (inst_final.c:232)
+   n0: 51456 0x109801: main (main.c:635)
+ n1: 26400 0x10B186: new_EasyTemplate (memory.c:515)
+  n1: 26400 0x121B8C: multiply_easy_non_constrained_op_parameters (inst_easy.c:1327)
+   n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+    n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+     n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+      n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+       n1: 25344 0x122D60: multiply_easy_op_parameters (inst_easy.c:1209)
+        n1: 25344 0x122F72: build_easy_action_templates (inst_easy.c:115)
+         n0: 25344 0x1097AE: main (main.c:624)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 1056 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 23584 0x12AD4A: build_connectivity_graph (inst_final.c:1130)
+  n0: 23584 0x10989D: main (main.c:654)
+ n1: 16386 0x131AD4: fct_pddlalloc (lex.fct_pddl.c:2244)
+  n1: 16386 0x131AD4: fct_pddl_create_buffer (lex.fct_pddl.c:1791)
+   n1: 16386 0x132054: fct_pddllex (lex.fct_pddl.c:1031)
+    n1: 16386 0x1342C6: fct_pddlparse (scan-fct_pddl.tab.c:1416)
+     n1: 16386 0x1344BE: load_fct_file (scan-fct_pddl.y:649)
+      n0: 16386 0x109765: main (main.c:557)
+ n1: 16386 0x1348E4: ops_pddlalloc (lex.ops_pddl.c:2248)
+  n1: 16386 0x1348E4: ops_pddl_create_buffer (lex.ops_pddl.c:1795)
+   n1: 16386 0x134E5B: ops_pddllex (lex.ops_pddl.c:1029)
+    n1: 16386 0x137906: ops_pddlparse (scan-ops_pddl.tab.c:1463)
+     n1: 16386 0x137CCE: load_ops_file (scan-ops_pddl.y:803)
+      n0: 16386 0x109750: main (main.c:551)
+ n1: 12864 0x128B84: create_final_actions (inst_final.c:848)
+  n1: 12864 0x12A72B: collect_relevant_facts (inst_final.c:598)
+   n0: 12864 0x10984F: main (main.c:645)
+ n1: 8576 0x12AD2F: build_connectivity_graph (inst_final.c:1129)
+  n0: 8576 0x10989D: main (main.c:654)
+ n1: 8184 0x12AD14: build_connectivity_graph (inst_final.c:1128)
+  n0: 8184 0x10989D: main (main.c:654)
+ n1: 8000 0x11C50C: dnf (inst_pre.c:2540)
+  n1: 8000 0x11C50C: normalize_all_wffs (inst_pre.c:1002)
+   n0: 8000 0x10979F: main (main.c:604)
+ n1: 7160 0x10A815: new_PlNode (memory.c:176)
+  n0: 7160 in 14 places, all below massif's threshold (1.00%)
+ n1: 6880 0x10AB15: new_WffNode (memory.c:302)
+  n0: 6880 in 2 places, all below massif's threshold (1.00%)
+ n1: 5856 0x10A696: new_TokenList (memory.c:111)
+  n0: 5856 in 22 places, all below massif's threshold (1.00%)
+ n1: 5840 0x1260B0: perform_reachability_analysis (inst_final.c:138)
+  n0: 5840 0x109801: main (main.c:635)
+ n1: 5840 0x1260C8: perform_reachability_analysis (inst_final.c:139)
+  n0: 5840 0x109801: main (main.c:635)
+ n1: 5840 0x1260E3: perform_reachability_analysis (inst_final.c:140)
+  n0: 5840 0x109801: main (main.c:635)
+ n1: 5840 0x126103: perform_reachability_analysis (inst_final.c:141)
+  n0: 5840 0x109801: main (main.c:635)
+#-----------
+snapshot=23
+#-----------
+time=3553958
+mem_heap_B=655463
+mem_heap_extra_B=70601
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=24
+#-----------
+time=3653386
+mem_heap_B=1207511
+mem_heap_extra_B=100281
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=25
+#-----------
+time=3832257
+mem_heap_B=1285478
+mem_heap_extra_B=104146
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=26
+#-----------
+time=4014768
+mem_heap_B=1288378
+mem_heap_extra_B=104406
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=27
+#-----------
+time=4174062
+mem_heap_B=1288662
+mem_heap_extra_B=104434
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=28
+#-----------
+time=4340826
+mem_heap_B=1290998
+mem_heap_extra_B=104698
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=29
+#-----------
+time=4454664
+mem_heap_B=1293934
+mem_heap_extra_B=104954
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=30
+#-----------
+time=4588547
+mem_heap_B=1294078
+mem_heap_extra_B=105050
+mem_stacks_B=0
+heap_tree=detailed
+n8: 1294078 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 754052 0x10B404: make_state (memory.c:621)
+  n0: 744372 0x10990B: main (main.c:675)
+  n0: 9680 in 11 places, all below massif's threshold (1.00%)
+ n1: 240000 0x11BAA5: split_domain (inst_pre.c:2149)
+  n0: 240000 0x1097A9: main (main.c:615)
+ n0: 165814 in 94 places, all below massif's threshold (1.00%)
+ n1: 51456 0x10B396: new_Action (memory.c:603)
+  n1: 51456 0x126C23: perform_reachability_analysis (inst_final.c:232)
+   n0: 51456 0x109801: main (main.c:635)
+ n1: 26400 0x10B186: new_EasyTemplate (memory.c:515)
+  n1: 26400 0x121B8C: multiply_easy_non_constrained_op_parameters (inst_easy.c:1327)
+   n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+    n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+     n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+      n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+       n1: 25344 0x122D60: multiply_easy_op_parameters (inst_easy.c:1209)
+        n1: 25344 0x122F72: build_easy_action_templates (inst_easy.c:115)
+         n0: 25344 0x1097AE: main (main.c:624)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 1056 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 23584 0x12AD4A: build_connectivity_graph (inst_final.c:1130)
+  n0: 23584 0x10989D: main (main.c:654)
+ n1: 16386 0x131AD4: fct_pddlalloc (lex.fct_pddl.c:2244)
+  n1: 16386 0x131AD4: fct_pddl_create_buffer (lex.fct_pddl.c:1791)
+   n1: 16386 0x132054: fct_pddllex (lex.fct_pddl.c:1031)
+    n1: 16386 0x1342C6: fct_pddlparse (scan-fct_pddl.tab.c:1416)
+     n1: 16386 0x1344BE: load_fct_file (scan-fct_pddl.y:649)
+      n0: 16386 0x109765: main (main.c:557)
+ n1: 16386 0x1348E4: ops_pddlalloc (lex.ops_pddl.c:2248)
+  n1: 16386 0x1348E4: ops_pddl_create_buffer (lex.ops_pddl.c:1795)
+   n1: 16386 0x134E5B: ops_pddllex (lex.ops_pddl.c:1029)
+    n1: 16386 0x137906: ops_pddlparse (scan-ops_pddl.tab.c:1463)
+     n1: 16386 0x137CCE: load_ops_file (scan-ops_pddl.y:803)
+      n0: 16386 0x109750: main (main.c:551)
+#-----------
+snapshot=31
+#-----------
+time=4680724
+mem_heap_B=1294150
+mem_heap_extra_B=105074
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=32
+#-----------
+time=4826968
+mem_heap_B=1296782
+mem_heap_extra_B=105298
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=33
+#-----------
+time=4955859
+mem_heap_B=1297158
+mem_heap_extra_B=105330
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=34
+#-----------
+time=5074748
+mem_heap_B=1300166
+mem_heap_extra_B=105586
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=35
+#-----------
+time=5188532
+mem_heap_B=1300918
+mem_heap_extra_B=105650
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=36
+#-----------
+time=5347435
+mem_heap_B=1301246
+mem_heap_extra_B=105674
+mem_stacks_B=0
+heap_tree=detailed
+n8: 1301246 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 754052 0x10B404: make_state (memory.c:621)
+  n0: 744372 0x10990B: main (main.c:675)
+  n0: 9680 in 11 places, all below massif's threshold (1.00%)
+ n1: 240000 0x11BAA5: split_domain (inst_pre.c:2149)
+  n0: 240000 0x1097A9: main (main.c:615)
+ n0: 172982 in 94 places, all below massif's threshold (1.00%)
+ n1: 51456 0x10B396: new_Action (memory.c:603)
+  n1: 51456 0x126C23: perform_reachability_analysis (inst_final.c:232)
+   n0: 51456 0x109801: main (main.c:635)
+ n1: 26400 0x10B186: new_EasyTemplate (memory.c:515)
+  n1: 26400 0x121B8C: multiply_easy_non_constrained_op_parameters (inst_easy.c:1327)
+   n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+    n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+     n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+      n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+       n1: 25344 0x122D60: multiply_easy_op_parameters (inst_easy.c:1209)
+        n1: 25344 0x122F72: build_easy_action_templates (inst_easy.c:115)
+         n0: 25344 0x1097AE: main (main.c:624)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 1056 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 23584 0x12AD4A: build_connectivity_graph (inst_final.c:1130)
+  n0: 23584 0x10989D: main (main.c:654)
+ n1: 16386 0x131AD4: fct_pddlalloc (lex.fct_pddl.c:2244)
+  n1: 16386 0x131AD4: fct_pddl_create_buffer (lex.fct_pddl.c:1791)
+   n1: 16386 0x132054: fct_pddllex (lex.fct_pddl.c:1031)
+    n1: 16386 0x1342C6: fct_pddlparse (scan-fct_pddl.tab.c:1416)
+     n1: 16386 0x1344BE: load_fct_file (scan-fct_pddl.y:649)
+      n0: 16386 0x109765: main (main.c:557)
+ n1: 16386 0x1348E4: ops_pddlalloc (lex.ops_pddl.c:2248)
+  n1: 16386 0x1348E4: ops_pddl_create_buffer (lex.ops_pddl.c:1795)
+   n1: 16386 0x134E5B: ops_pddllex (lex.ops_pddl.c:1029)
+    n1: 16386 0x137906: ops_pddlparse (scan-ops_pddl.tab.c:1463)
+     n1: 16386 0x137CCE: load_ops_file (scan-ops_pddl.y:803)
+      n0: 16386 0x109750: main (main.c:551)
+#-----------
+snapshot=37
+#-----------
+time=5529186
+mem_heap_B=1303974
+mem_heap_extra_B=106010
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=38
+#-----------
+time=5730489
+mem_heap_B=1304214
+mem_heap_extra_B=106170
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=39
+#-----------
+time=5950823
+mem_heap_B=1304382
+mem_heap_extra_B=106282
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=40
+#-----------
+time=6105883
+mem_heap_B=1304406
+mem_heap_extra_B=106298
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=41
+#-----------
+time=6289025
+mem_heap_B=1304526
+mem_heap_extra_B=106378
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=42
+#-----------
+time=6384609
+mem_heap_B=1304574
+mem_heap_extra_B=106410
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=43
+#-----------
+time=6652696
+mem_heap_B=1304622
+mem_heap_extra_B=106418
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=44
+#-----------
+time=6855547
+mem_heap_B=1308334
+mem_heap_extra_B=106778
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=45
+#-----------
+time=6976951
+mem_heap_B=1308454
+mem_heap_extra_B=106858
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=46
+#-----------
+time=7110794
+mem_heap_B=1308598
+mem_heap_extra_B=106954
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=47
+#-----------
+time=7270252
+mem_heap_B=1308646
+mem_heap_extra_B=106986
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=48
+#-----------
+time=7432612
+mem_heap_B=1308838
+mem_heap_extra_B=107114
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=49
+#-----------
+time=7593683
+mem_heap_B=1308886
+mem_heap_extra_B=107146
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=50
+#-----------
+time=7696821
+mem_heap_B=1310742
+mem_heap_extra_B=107314
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=51
+#-----------
+time=7802850
+mem_heap_B=1311590
+mem_heap_extra_B=107466
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=52
+#-----------
+time=7905462
+mem_heap_B=1312414
+mem_heap_extra_B=107602
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=53
+#-----------
+time=8002126
+mem_heap_B=1312534
+mem_heap_extra_B=107682
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=54
+#-----------
+time=8141205
+mem_heap_B=1312654
+mem_heap_extra_B=107762
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=55
+#-----------
+time=8299056
+mem_heap_B=1312702
+mem_heap_extra_B=107794
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=56
+#-----------
+time=8425047
+mem_heap_B=1312798
+mem_heap_extra_B=107858
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=57
+#-----------
+time=8644603
+mem_heap_B=1312846
+mem_heap_extra_B=107890
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=58
+#-----------
+time=8732218
+mem_heap_B=1314654
+mem_heap_extra_B=108026
+mem_stacks_B=0
+heap_tree=detailed
+n8: 1314654 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 754052 0x10B404: make_state (memory.c:621)
+  n0: 744372 0x10990B: main (main.c:675)
+  n0: 9680 in 11 places, all below massif's threshold (1.00%)
+ n1: 240000 0x11BAA5: split_domain (inst_pre.c:2149)
+  n0: 240000 0x1097A9: main (main.c:615)
+ n0: 186390 in 94 places, all below massif's threshold (1.00%)
+ n1: 51456 0x10B396: new_Action (memory.c:603)
+  n1: 51456 0x126C23: perform_reachability_analysis (inst_final.c:232)
+   n0: 51456 0x109801: main (main.c:635)
+ n1: 26400 0x10B186: new_EasyTemplate (memory.c:515)
+  n1: 26400 0x121B8C: multiply_easy_non_constrained_op_parameters (inst_easy.c:1327)
+   n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+    n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+     n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+      n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+       n1: 25344 0x122D60: multiply_easy_op_parameters (inst_easy.c:1209)
+        n1: 25344 0x122F72: build_easy_action_templates (inst_easy.c:115)
+         n0: 25344 0x1097AE: main (main.c:624)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 1056 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 23584 0x12AD4A: build_connectivity_graph (inst_final.c:1130)
+  n0: 23584 0x10989D: main (main.c:654)
+ n1: 16386 0x131AD4: fct_pddlalloc (lex.fct_pddl.c:2244)
+  n1: 16386 0x131AD4: fct_pddl_create_buffer (lex.fct_pddl.c:1791)
+   n1: 16386 0x132054: fct_pddllex (lex.fct_pddl.c:1031)
+    n1: 16386 0x1342C6: fct_pddlparse (scan-fct_pddl.tab.c:1416)
+     n1: 16386 0x1344BE: load_fct_file (scan-fct_pddl.y:649)
+      n0: 16386 0x109765: main (main.c:557)
+ n1: 16386 0x1348E4: ops_pddlalloc (lex.ops_pddl.c:2248)
+  n1: 16386 0x1348E4: ops_pddl_create_buffer (lex.ops_pddl.c:1795)
+   n1: 16386 0x134E5B: ops_pddllex (lex.ops_pddl.c:1029)
+    n1: 16386 0x137906: ops_pddlparse (scan-ops_pddl.tab.c:1463)
+     n1: 16386 0x137CCE: load_ops_file (scan-ops_pddl.y:803)
+      n0: 16386 0x109750: main (main.c:551)
+#-----------
+snapshot=59
+#-----------
+time=8770360
+mem_heap_B=1314726
+mem_heap_extra_B=108074
+mem_stacks_B=0
+heap_tree=detailed
+n8: 1314726 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 754052 0x10B404: make_state (memory.c:621)
+  n0: 744372 0x10990B: main (main.c:675)
+  n0: 9680 in 11 places, all below massif's threshold (1.00%)
+ n1: 240000 0x11BAA5: split_domain (inst_pre.c:2149)
+  n0: 240000 0x1097A9: main (main.c:615)
+ n0: 186462 in 94 places, all below massif's threshold (1.00%)
+ n1: 51456 0x10B396: new_Action (memory.c:603)
+  n1: 51456 0x126C23: perform_reachability_analysis (inst_final.c:232)
+   n0: 51456 0x109801: main (main.c:635)
+ n1: 26400 0x10B186: new_EasyTemplate (memory.c:515)
+  n1: 26400 0x121B8C: multiply_easy_non_constrained_op_parameters (inst_easy.c:1327)
+   n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+    n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+     n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+      n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+       n1: 25344 0x122D60: multiply_easy_op_parameters (inst_easy.c:1209)
+        n1: 25344 0x122F72: build_easy_action_templates (inst_easy.c:115)
+         n0: 25344 0x1097AE: main (main.c:624)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 1056 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 23584 0x12AD4A: build_connectivity_graph (inst_final.c:1130)
+  n0: 23584 0x10989D: main (main.c:654)
+ n1: 16386 0x131AD4: fct_pddlalloc (lex.fct_pddl.c:2244)
+  n1: 16386 0x131AD4: fct_pddl_create_buffer (lex.fct_pddl.c:1791)
+   n1: 16386 0x132054: fct_pddllex (lex.fct_pddl.c:1031)
+    n1: 16386 0x1342C6: fct_pddlparse (scan-fct_pddl.tab.c:1416)
+     n1: 16386 0x1344BE: load_fct_file (scan-fct_pddl.y:649)
+      n0: 16386 0x109765: main (main.c:557)
+ n1: 16386 0x1348E4: ops_pddlalloc (lex.ops_pddl.c:2248)
+  n1: 16386 0x1348E4: ops_pddl_create_buffer (lex.ops_pddl.c:1795)
+   n1: 16386 0x134E5B: ops_pddllex (lex.ops_pddl.c:1029)
+    n1: 16386 0x137906: ops_pddlparse (scan-ops_pddl.tab.c:1463)
+     n1: 16386 0x137CCE: load_ops_file (scan-ops_pddl.y:803)
+      n0: 16386 0x109750: main (main.c:551)
+#-----------
+snapshot=60
+#-----------
+time=8889937
+mem_heap_B=1315502
+mem_heap_extra_B=108178
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=61
+#-----------
+time=9006212
+mem_heap_B=1315598
+mem_heap_extra_B=108242
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=62
+#-----------
+time=9157044
+mem_heap_B=1315694
+mem_heap_extra_B=108306
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=63
+#-----------
+time=9253071
+mem_heap_B=1315814
+mem_heap_extra_B=108386
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=64
+#-----------
+time=9380088
+mem_heap_B=1317646
+mem_heap_extra_B=108538
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=65
+#-----------
+time=9473171
+mem_heap_B=1318446
+mem_heap_extra_B=108658
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=66
+#-----------
+time=9560226
+mem_heap_B=1319198
+mem_heap_extra_B=108746
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=67
+#-----------
+time=9687873
+mem_heap_B=1320022
+mem_heap_extra_B=108882
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=68
+#-----------
+time=9801085
+mem_heap_B=1320118
+mem_heap_extra_B=108946
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=69
+#-----------
+time=9898504
+mem_heap_B=1320142
+mem_heap_extra_B=108962
+mem_stacks_B=0
+heap_tree=detailed
+n8: 1320142 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 754052 0x10B404: make_state (memory.c:621)
+  n0: 744372 0x10990B: main (main.c:675)
+  n0: 9680 in 11 places, all below massif's threshold (1.00%)
+ n1: 240000 0x11BAA5: split_domain (inst_pre.c:2149)
+  n0: 240000 0x1097A9: main (main.c:615)
+ n0: 191878 in 94 places, all below massif's threshold (1.00%)
+ n1: 51456 0x10B396: new_Action (memory.c:603)
+  n1: 51456 0x126C23: perform_reachability_analysis (inst_final.c:232)
+   n0: 51456 0x109801: main (main.c:635)
+ n1: 26400 0x10B186: new_EasyTemplate (memory.c:515)
+  n1: 26400 0x121B8C: multiply_easy_non_constrained_op_parameters (inst_easy.c:1327)
+   n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+    n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+     n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+      n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+       n1: 25344 0x122D60: multiply_easy_op_parameters (inst_easy.c:1209)
+        n1: 25344 0x122F72: build_easy_action_templates (inst_easy.c:115)
+         n0: 25344 0x1097AE: main (main.c:624)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 1056 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 23584 0x12AD4A: build_connectivity_graph (inst_final.c:1130)
+  n0: 23584 0x10989D: main (main.c:654)
+ n1: 16386 0x131AD4: fct_pddlalloc (lex.fct_pddl.c:2244)
+  n1: 16386 0x131AD4: fct_pddl_create_buffer (lex.fct_pddl.c:1791)
+   n1: 16386 0x132054: fct_pddllex (lex.fct_pddl.c:1031)
+    n1: 16386 0x1342C6: fct_pddlparse (scan-fct_pddl.tab.c:1416)
+     n1: 16386 0x1344BE: load_fct_file (scan-fct_pddl.y:649)
+      n0: 16386 0x109765: main (main.c:557)
+ n1: 16386 0x1348E4: ops_pddlalloc (lex.ops_pddl.c:2248)
+  n1: 16386 0x1348E4: ops_pddl_create_buffer (lex.ops_pddl.c:1795)
+   n1: 16386 0x134E5B: ops_pddllex (lex.ops_pddl.c:1029)
+    n1: 16386 0x137906: ops_pddlparse (scan-ops_pddl.tab.c:1463)
+     n1: 16386 0x137CCE: load_ops_file (scan-ops_pddl.y:803)
+      n0: 16386 0x109750: main (main.c:551)
+#-----------
+snapshot=70
+#-----------
+time=9998098
+mem_heap_B=1321550
+mem_heap_extra_B=109074
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=71
+#-----------
+time=10092857
+mem_heap_B=1322934
+mem_heap_extra_B=109170
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=72
+#-----------
+time=10180449
+mem_heap_B=1325494
+mem_heap_extra_B=109394
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=73
+#-----------
+time=10269382
+mem_heap_B=1327134
+mem_heap_extra_B=109490
+mem_stacks_B=0
+heap_tree=empty
+#-----------
+snapshot=74
+#-----------
+time=10295960
+mem_heap_B=1327862
+mem_heap_extra_B=109538
+mem_stacks_B=0
+heap_tree=peak
+n8: 1327862 (heap allocation functions) malloc/new/new[], --alloc-fns, etc.
+ n2: 754052 0x10B404: make_state (memory.c:621)
+  n0: 744372 0x10990B: main (main.c:675)
+  n0: 9680 in 11 places, all below massif's threshold (1.00%)
+ n1: 240000 0x11BAA5: split_domain (inst_pre.c:2149)
+  n0: 240000 0x1097A9: main (main.c:615)
+ n0: 199598 in 94 places, all below massif's threshold (1.00%)
+ n1: 51456 0x10B396: new_Action (memory.c:603)
+  n1: 51456 0x126C23: perform_reachability_analysis (inst_final.c:232)
+   n0: 51456 0x109801: main (main.c:635)
+ n1: 26400 0x10B186: new_EasyTemplate (memory.c:515)
+  n1: 26400 0x121B8C: multiply_easy_non_constrained_op_parameters (inst_easy.c:1327)
+   n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+    n2: 26400 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+     n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+      n2: 25344 0x121B29: multiply_easy_non_constrained_op_parameters (inst_easy.c:1349)
+       n1: 25344 0x122D60: multiply_easy_op_parameters (inst_easy.c:1209)
+        n1: 25344 0x122F72: build_easy_action_templates (inst_easy.c:115)
+         n0: 25344 0x1097AE: main (main.c:624)
+       n0: 0 in 1 place, below massif's threshold (1.00%)
+      n0: 0 in 1 place, below massif's threshold (1.00%)
+     n0: 1056 in 2 places, all below massif's threshold (1.00%)
+    n0: 0 in 1 place, below massif's threshold (1.00%)
+ n1: 23584 0x12AD4A: build_connectivity_graph (inst_final.c:1130)
+  n0: 23584 0x10989D: main (main.c:654)
+ n1: 16386 0x131AD4: fct_pddlalloc (lex.fct_pddl.c:2244)
+  n1: 16386 0x131AD4: fct_pddl_create_buffer (lex.fct_pddl.c:1791)
+   n1: 16386 0x132054: fct_pddllex (lex.fct_pddl.c:1031)
+    n1: 16386 0x1342C6: fct_pddlparse (scan-fct_pddl.tab.c:1416)
+     n1: 16386 0x1344BE: load_fct_file (scan-fct_pddl.y:649)
+      n0: 16386 0x109765: main (main.c:557)
+ n1: 16386 0x1348E4: ops_pddlalloc (lex.ops_pddl.c:2248)
+  n1: 16386 0x1348E4: ops_pddl_create_buffer (lex.ops_pddl.c:1795)
+   n1: 16386 0x134E5B: ops_pddllex (lex.ops_pddl.c:1029)
+    n1: 16386 0x137906: ops_pddlparse (scan-ops_pddl.tab.c:1463)
+     n1: 16386 0x137CCE: load_ops_file (scan-ops_pddl.y:803)
+      n0: 16386 0x109750: main (main.c:551)
+#-----------
+snapshot=75
+#-----------
+time=10595099
+mem_heap_B=1328502
+mem_heap_extra_B=109618
+mem_stacks_B=0
+heap_tree=empty
