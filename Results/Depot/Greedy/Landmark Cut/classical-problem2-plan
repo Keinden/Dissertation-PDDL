@@ -1,0 +1,46 @@
+(board-driver agent1 truck2 port1)
+(board-driver agent2 truck1 port1)
+(drive-truck agent2 truck1 port1 dock1)
+(disembark-driver agent2 truck1 dock1)
+(operate-crane agent2 crane1 dock1)
+(unload-ship agent2 crane1 ship1 container1 dock1)
+(drive-truck agent1 truck2 port1 dock1)
+(crane-load-container-to-truck agent2 agent1 crane1 truck2 container1 dock1)
+(unload-ship agent2 crane1 ship1 container2 dock1)
+(drive-truck agent1 truck2 dock1 port1)
+(drive-truck agent1 truck2 port1 distributor1)
+(unload-cargo agent1 truck2 container1 cargo2 distributor1)
+(unload-cargo agent1 truck2 container1 cargo1 distributor1)
+(drive-truck agent1 truck2 distributor1 port1)
+(drive-truck agent1 truck2 port1 dock1)
+(disembark-driver agent1 truck2 dock1)
+(board-driver agent1 truck1 dock1)
+(crane-load-container-to-truck agent2 agent1 crane1 truck1 container2 dock1)
+(drive-truck agent1 truck1 dock1 port1)
+(drive-truck agent1 truck1 port1 distributor2)
+(unload-cargo agent1 truck1 container2 cargo3 distributor2)
+(drive-truck agent1 truck1 distributor2 port1)
+(drive-truck agent1 truck1 port1 dock1)
+(crane-unload-truck-container agent2 agent1 crane1 truck1 container2 dock1)
+(disembark-driver agent1 truck1 dock1)
+(board-driver agent1 truck2 dock1)
+(crane-unload-container-to-dock agent2 crane1 dock1 container2)
+(crane-unload-truck-container agent2 agent1 crane1 truck2 container1 dock1)
+(crane-unload-container-to-dock agent2 crane1 dock1 container1)
+; cost = 29 (unit cost)
+[t=0.013696s, 24684 KB] Plan length: 29 step(s).
+[t=0.013696s, 24684 KB] Plan cost: 29
+[t=0.013696s, 24684 KB] Expanded 88 state(s).
+[t=0.013696s, 24684 KB] Reopened 0 state(s).
+[t=0.013696s, 24684 KB] Evaluated 272 state(s).
+[t=0.013696s, 24684 KB] Evaluations: 359
+[t=0.013696s, 24684 KB] Generated 427 state(s).
+[t=0.013696s, 24684 KB] Dead ends: 36 state(s).
+[t=0.013696s, 24684 KB] Number of registered states: 272
+[t=0.013696s, 24684 KB] Int hash set load factor: 272/512 = 0.53125
+[t=0.013696s, 24684 KB] Int hash set resizes: 9
+[t=0.013696s, 24684 KB] Search time: 0.0109465s
+[t=0.013696s, 24684 KB] Total time: 0.013696s
+Solution found.
+Peak memory: 24684 KB
+

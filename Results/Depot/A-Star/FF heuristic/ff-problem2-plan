@@ -1,0 +1,47 @@
+(board-passenger agent1 truck2 port1)
+(idle-state-to-transport-state agent2)
+(board-driver agent2 truck2 port1)
+(idle-state-to-dock-state agent1)
+(drive-truck agent2 truck2 port1 dock1)
+(disembark-passenger agent1 truck2 dock1)
+(operate-crane agent1 crane1 dock1)
+(unload-ship agent1 crane1 ship1 container1 dock1)
+(crane-unload-container-to-truck agent1 agent2 crane1 truck2 container1 dock1)
+(drive-truck agent2 truck2 dock1 port1)
+(drive-truck agent2 truck2 port1 distributor1)
+(unload-cargo agent2 truck2 container1 cargo2 distributor1)
+(unload-cargo agent2 truck2 container1 cargo1 distributor1)
+(drive-truck agent2 truck2 distributor1 port1)
+(drive-truck agent2 truck2 port1 dock1)
+(crane-unload-truck-container agent1 agent2 crane1 truck2 container1 dock1)
+(unload-container-to-dock agent1 crane1 dock1 container1)
+(unload-ship agent1 crane1 ship1 container2 dock1)
+(crane-unload-container-to-truck agent1 agent2 crane1 truck2 container2 dock1)
+(drive-truck agent2 truck2 dock1 port1)
+(drive-truck agent2 truck2 port1 distributor2)
+(unload-cargo agent2 truck2 container2 cargo3 distributor2)
+(drive-truck agent2 truck2 distributor2 port1)
+(drive-truck agent2 truck2 port1 dock1)
+(crane-unload-truck-container agent1 agent2 crane1 truck2 container2 dock1)
+(unload-container-to-dock agent1 crane1 dock1 container2)
+; cost = 26 (unit cost)
+[t=0.0547724s, 24996 KB] Plan length: 26 step(s).
+[t=0.0547724s, 24996 KB] Plan cost: 26
+[t=0.0547724s, 24996 KB] Expanded 3888 state(s).
+[t=0.0547724s, 24996 KB] Reopened 130 state(s).
+[t=0.0547724s, 24996 KB] Evaluated 9456 state(s).
+[t=0.0547724s, 24996 KB] Evaluations: 9456
+[t=0.0547724s, 24996 KB] Generated 21704 state(s).
+[t=0.0547724s, 24996 KB] Dead ends: 836 state(s).
+[t=0.0547724s, 24996 KB] Expanded until last jump: 3882 state(s).
+[t=0.0547724s, 24996 KB] Reopened until last jump: 130 state(s).
+[t=0.0547724s, 24996 KB] Evaluated until last jump: 9429 state(s).
+[t=0.0547724s, 24996 KB] Generated until last jump: 21673 state(s).
+[t=0.0547724s, 24996 KB] Number of registered states: 9456
+[t=0.0547724s, 24996 KB] Int hash set load factor: 9456/16384 = 0.577148
+[t=0.0547724s, 24996 KB] Int hash set resizes: 14
+[t=0.0547724s, 24996 KB] Search time: 0.0522821s
+[t=0.0547724s, 24996 KB] Total time: 0.0547724s
+Solution found.
+Peak memory: 24996 KB
+

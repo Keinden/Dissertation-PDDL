@@ -1,0 +1,45 @@
+(board-passenger agent1 truck2 port1)
+(board-driver agent2 truck2 port1)
+(drive-truck agent2 truck2 port1 dock1)
+(disembark-passenger agent1 truck2 dock1)
+(operate-crane agent1 crane1 dock1)
+(unload-ship agent1 crane1 ship1 container1 dock1)
+(crane-load-container-to-truck agent1 agent2 crane1 truck2 container1 dock1)
+(drive-truck agent2 truck2 dock1 port1)
+(drive-truck agent2 truck2 port1 distributor1)
+(unload-cargo agent2 truck2 container1 cargo2 distributor1)
+(unload-cargo agent2 truck2 container1 cargo1 distributor1)
+(drive-truck agent2 truck2 distributor1 port1)
+(drive-truck agent2 truck2 port1 dock1)
+(crane-unload-truck-container agent1 agent2 crane1 truck2 container1 dock1)
+(crane-unload-container-to-dock agent1 crane1 dock1 container1)
+(unload-ship agent1 crane1 ship1 container2 dock1)
+(crane-load-container-to-truck agent1 agent2 crane1 truck2 container2 dock1)
+(drive-truck agent2 truck2 dock1 port1)
+(drive-truck agent2 truck2 port1 distributor2)
+(unload-cargo agent2 truck2 container2 cargo3 distributor2)
+(drive-truck agent2 truck2 distributor2 port1)
+(drive-truck agent2 truck2 port1 dock1)
+(crane-unload-truck-container agent1 agent2 crane1 truck2 container2 dock1)
+(crane-unload-container-to-dock agent1 crane1 dock1 container2)
+; cost = 24 (unit cost)
+[t=0.0241032s, 24832 KB] Plan length: 24 step(s).
+[t=0.0241032s, 24832 KB] Plan cost: 24
+[t=0.0241032s, 24832 KB] Expanded 1827 state(s).
+[t=0.0241032s, 24832 KB] Reopened 8 state(s).
+[t=0.0241032s, 24832 KB] Evaluated 4231 state(s).
+[t=0.0241032s, 24832 KB] Evaluations: 4231
+[t=0.0241032s, 24832 KB] Generated 8161 state(s).
+[t=0.0241032s, 24832 KB] Dead ends: 648 state(s).
+[t=0.0241032s, 24832 KB] Expanded until last jump: 1821 state(s).
+[t=0.0241032s, 24832 KB] Reopened until last jump: 8 state(s).
+[t=0.0241032s, 24832 KB] Evaluated until last jump: 4214 state(s).
+[t=0.0241032s, 24832 KB] Generated until last jump: 8140 state(s).
+[t=0.0241032s, 24832 KB] Number of registered states: 4231
+[t=0.0241032s, 24832 KB] Int hash set load factor: 4231/8192 = 0.516479
+[t=0.0241032s, 24832 KB] Int hash set resizes: 13
+[t=0.0241032s, 24832 KB] Search time: 0.021821s
+[t=0.0241032s, 24832 KB] Total time: 0.0241032s
+Solution found.
+Peak memory: 24832 KB
+

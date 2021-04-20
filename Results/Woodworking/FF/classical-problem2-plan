@@ -1,0 +1,64 @@
+==90644== Massif, a heap profiler
+==90644== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
+==90644== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==90644== Command: ./ff -o ../../Woodworking/Satisficing/Classical/domain.pddl -f ../../Woodworking/Satisficing/Classical/problem-2.pddl
+==90644== 
+
+ff: parsing domain file
+domain 'WOODWORKING' defined
+ ... done.
+ff: parsing problem file
+problem 'WOODWORKING2' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   18 into depth [1]
+                                  17            [1]
+                                  16            [1]
+                                  15            [1]
+                                  14            [1]
+                                  13            [1]
+                                  12            [1]
+                                  11            [1]
+                                  10            [1]
+                                   9            [1]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+
+step    0: CHANGE-POSITION AGENT3 OFFICE1 WPROC1
+        1: MAKE-SMALL-WOOD WD1 HIGHSPEED-SAW1 AGENT3 WPROC1
+        2: MOVE_WOOD AGENT3 WD1 WPROC1 CMAKE1
+        3: MAKE-MEDIUM-WOOD WD2 HIGHSPEED-SAW1 AGENT3 WPROC1
+        4: MOVE_WOOD AGENT3 WD2 WPROC1 CMAKE1
+        5: MAKE-LARGE-WOOD WD3 HIGHSPEED-SAW1 AGENT3 WPROC1
+        6: MOVE_WOOD AGENT3 WD3 WPROC1 CMAKE1
+        7: CHANGE-POSITION AGENT3 WPROC1 CMAKE1
+        8: MAKE-TOY AGENT3 WD1 CHISEL1 CMAKE1
+        9: MOVE_WOOD AGENT3 WD1 CMAKE1 FINISH1
+       10: MAKE-BOOKSHELF AGENT3 WD2 PLANER1 CMAKE1
+       11: MOVE_WOOD AGENT3 WD2 CMAKE1 FINISH1
+       12: MAKE-TABLE AGENT3 WD3 PLANER1 BANDSAW1 CMAKE1
+       13: MOVE_WOOD AGENT3 WD3 CMAKE1 FINISH1
+       14: CHANGE-POSITION AGENT3 CMAKE1 FINISH1
+       15: FINISH-TOY AGENT3 WD1 TOY1 RED PAINT-BRUSH1 FINISH1
+       16: FINISH-BOOKSHELF AGENT3 WD2 BKSHELF1 BLUE PAINT-BRUSH1 FINISH1
+       17: FINISH-TABLE AGENT3 WD3 TABLE1 GREEN PAINT-BRUSH1 FINISH1
+     
+
+time spent:    0.06 seconds instantiating 1560 easy, 0 hard action templates
+               0.01 seconds reachability analysis, yielding 239 facts and 1560 actions
+               0.00 seconds creating final representation with 222 relevant facts
+               0.01 seconds building connectivity graph
+               0.03 seconds searching, evaluating 31 states, to a max depth of 1
+               0.11 seconds total time
+

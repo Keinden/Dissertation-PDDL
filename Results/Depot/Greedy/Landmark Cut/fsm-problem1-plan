@@ -1,0 +1,37 @@
+(idle-state-to-transport-state agent2)
+(board-driver agent2 truck1 port1)
+(board-passenger agent1 truck1 port1)
+(idle-state-to-dock-state agent1)
+(drive-truck agent2 truck1 port1 dock1)
+(disembark-passenger agent1 truck1 dock1)
+(operate-crane agent1 crane1 dock1)
+(unload-ship agent1 crane1 ship1 container1 dock1)
+(crane-unload-container-to-truck agent1 agent2 crane1 truck1 container1 dock1)
+(drive-truck agent2 truck1 dock1 port1)
+(drive-truck agent2 truck1 port1 distributor1)
+(unload-cargo agent2 truck1 container1 cargo2 distributor1)
+(unload-cargo agent2 truck1 container1 cargo1 distributor1)
+(drive-truck agent2 truck1 distributor1 port1)
+(drive-truck agent2 truck1 port1 distributor2)
+(unload-cargo agent2 truck1 container1 cargo3 distributor2)
+(drive-truck agent2 truck1 distributor2 port1)
+(drive-truck agent2 truck1 port1 dock1)
+(crane-unload-truck-container agent1 agent2 crane1 truck1 container1 dock1)
+(unload-container-to-dock agent1 crane1 dock1 container1)
+; cost = 20 (unit cost)
+[t=0.00517517s, 24680 KB] Plan length: 20 step(s).
+[t=0.00517517s, 24680 KB] Plan cost: 20
+[t=0.00517517s, 24680 KB] Expanded 30 state(s).
+[t=0.00517517s, 24680 KB] Reopened 0 state(s).
+[t=0.00517517s, 24680 KB] Evaluated 157 state(s).
+[t=0.00517517s, 24680 KB] Evaluations: 186
+[t=0.00517517s, 24680 KB] Generated 190 state(s).
+[t=0.00517517s, 24680 KB] Dead ends: 7 state(s).
+[t=0.00517517s, 24680 KB] Number of registered states: 157
+[t=0.00517517s, 24680 KB] Int hash set load factor: 157/256 = 0.613281
+[t=0.00517517s, 24680 KB] Int hash set resizes: 8
+[t=0.00517517s, 24680 KB] Search time: 0.00377034s
+[t=0.00517517s, 24680 KB] Total time: 0.00517517s
+Solution found.
+Peak memory: 24680 KB
+

@@ -1,0 +1,57 @@
+==100432== Massif, a heap profiler
+==100432== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
+==100432== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==100432== Command: ./optic-cplex -N ../../Woodworking/Temporal/Classical/domain.pddl ../../Woodworking/Temporal/Classical/problem-2.pddl
+==100432== 
+Number of literals: 167
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+No analytic limits found, not considering limit effects of goal-only operators
+All the ground actions in this problem are compression-safe
+Initial heuristic = 33.000, admissible cost estimate 0.000
+b (32.000 | 2.000)b (31.000 | 10.001)b (30.000 | 12.001)b (29.000 | 18.002)b (28.000 | 20.002)==100432== brk segment overflow in thread #1: can't grow to 0x480a000
+==100432== (see section Limitations in user manual)
+==100432== NOTE: further instances of this message will not be shown
+b (27.000 | 23.003)b (26.000 | 25.003)b (25.000 | 28.004)b (24.000 | 30.003)b (23.000 | 38.004)b (22.000 | 40.004)b (21.000 | 48.006)b (20.000 | 50.006)b (19.000 | 52.006)b (18.000 | 52.006)b (17.000 | 52.006)b (16.000 | 52.006)b (15.000 | 52.006)b (14.000 | 52.006)b (13.000 | 52.006)b (12.000 | 52.006)b (11.000 | 52.006)b (10.000 | 54.004)b (9.000 | 59.004)b (8.000 | 64.006)b (7.000 | 69.007)b (6.000 | 76.003)b (5.000 | 78.003)b (4.000 | 96.005)b (3.000 | 98.005)b (2.000 | 100.005)b (1.000 | 108.005)(G);;;; Solution Found
+; States evaluated: 115
+; Cost: 118.006
+; Time 1.43
+0.000: (move-location agent1 office1 wproc1)  [2.000]
+0.000: (move-location agent2 office1 pmake1)  [2.000]
+2.001: (make-small-wood wd2 highspeed-saw1 agent1 wproc1)  [8.000]
+10.001: (move-wood agent1 wd2 wproc1 pmake1)  [2.000]
+10.002: (make-small-wood wd1 highspeed-saw1 agent1 wproc1)  [8.000]
+12.001: (make-toy agent2 wd2 chisel1 pmake1)  [15.000]
+18.002: (move-wood agent1 wd1 wproc1 pmake1)  [2.000]
+18.003: (make-medium-wood wd4 highspeed-saw1 agent1 wproc1)  [5.000]
+23.003: (move-wood agent1 wd4 wproc1 pmake1)  [2.000]
+23.004: (make-medium-wood wd3 highspeed-saw1 agent1 wproc1)  [5.000]
+25.003: (make-bookshelf agent2 wd4 planer1 pmake1)  [10.000]
+27.001: (move-wood agent2 wd2 pmake1 finish1)  [2.000]
+27.002: (make-toy agent2 wd1 chisel1 pmake1)  [15.000]
+28.004: (move-wood agent1 wd3 wproc1 pmake1)  [2.000]
+28.005: (make-large-wood wd6 highspeed-saw1 agent1 wproc1)  [10.000]
+35.003: (move-wood agent2 wd4 pmake1 finish1)  [2.000]
+35.004: (make-bookshelf agent2 wd3 planer1 pmake1)  [10.000]
+38.005: (move-wood agent1 wd6 wproc1 pmake1)  [2.000]
+38.006: (make-large-wood wd5 highspeed-saw1 agent1 wproc1)  [10.000]
+42.002: (move-wood agent2 wd1 pmake1 finish1)  [2.000]
+45.004: (move-wood agent2 wd3 pmake1 finish1)  [2.000]
+47.004: (move-location agent2 pmake1 finish1)  [2.000]
+48.006: (move-wood agent1 wd5 wproc1 pmake1)  [2.000]
+49.004: (finish-bookshelf agent2 wd4 bkshelf2 green paint-brush1 finish1)  [5.000]
+50.006: (move-location agent1 wproc1 finish1)  [2.000]
+54.004: (move-location agent2 finish1 pmake1)  [2.000]
+54.005: (finish-bookshelf agent1 wd3 bkshelf1 blue paint-brush1 finish1)  [5.000]
+56.004: (make-table agent2 wd6 planer1 bandsaw1 pmake1)  [20.000]
+59.006: (finish-toy agent1 wd1 toy1 red paint-brush1 finish1)  [5.000]
+64.007: (finish-toy agent1 wd2 toy2 blue paint-brush1 finish1)  [5.000]
+69.007: (move-location agent1 finish1 pmake1)  [2.000]
+76.005: (make-table agent1 wd5 planer1 bandsaw1 pmake1)  [20.000]
+96.004: (move-wood agent2 wd6 pmake1 finish1)  [2.000]
+96.005: (move-location agent1 pmake1 finish1)  [2.000]
+98.005: (finish-table agent1 wd6 table2 red paint-brush1 finish1)  [10.000]
+106.005: (move-wood agent2 wd5 pmake1 finish1)  [2.000]
+108.005: (move-location agent2 pmake1 finish1)  [2.000]
+108.006: (finish-table agent1 wd5 table1 green paint-brush1 finish1)  [10.000]
+==100432== 

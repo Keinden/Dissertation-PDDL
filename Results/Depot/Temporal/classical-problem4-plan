@@ -1,0 +1,96 @@
+==101418== Massif, a heap profiler
+==101418== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
+==101418== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==101418== Command: ./optic-cplex -N ../../Depot/New\ Design/Temporal/Classical/temporal-domain.pddl ../../Depot/New\ Design/Temporal/Classical/temporal-problem4.pddl
+==101418== 
+Number of literals: 92
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+No semaphore facts found, returning
+No analytic limits found, not considering limit effects of goal-only operators
+All the ground actions in this problem are compression-safe
+Initial heuristic = 30.000, admissible cost estimate 0.000
+b (29.000 | 1.000)b (27.000 | 8.003)b (26.000 | 25.006)b (25.000 | 27.006)b (24.000 | 29.007)b (23.000 | 31.008)b (22.000 | 33.009)==101418== brk segment overflow in thread #1: can't grow to 0x480c000
+==101418== (see section Limitations in user manual)
+==101418== NOTE: further instances of this message will not be shown
+b (21.000 | 60.012)b (20.000 | 80.014)b (19.000 | 92.017)b (18.000 | 94.018)b (17.000 | 101.021)
+Resorting to best-first search
+Running WA* with W = 5.000, not restarting with goal states
+b (29.000 | 1.000)b (28.000 | 8.003)b (27.000 | 8.003)b (26.000 | 33.006)b (25.000 | 38.006)b (24.000 | 38.006)b (23.000 | 38.006)b (22.000 | 47.012)b (20.000 | 67.014)b (19.000 | 82.016)b (18.000 | 87.016)b (17.000 | 87.016)b (16.000 | 94.021)b (14.000 | 114.023)b (13.000 | 129.025)b (12.000 | 134.025)b (11.000 | 134.025)b (10.000 | 134.025)b (9.000 | 141.030)b (7.000 | 161.032)b (6.000 | 171.033)b (5.000 | 180.034)b (4.000 | 182.035)b (3.000 | 183.035)b (2.000 | 184.036)b (1.000 | 189.036)(G);;;; Solution Found
+; States evaluated: 41560
+; Cost: 194.037
+; Time 181.69
+0.000: (board-driver agent1 truck1 port1)  [1.000]
+0.000: (board-passenger agent2 truck1 port1)  [1.000]
+1.001: (drive-truck agent1 truck1 port1 dock1)  [1.000]
+2.002: (disembark-driver agent1 truck1 dock1)  [1.000]
+2.002: (disembark-passenger agent2 truck1 dock1)  [1.000]
+3.003: (operate-crane agent2 crane1 dock1)  [5.000]
+3.003: (board-driver agent1 truck1 dock1)  [1.000]
+8.004: (unload-ship agent2 crane1 ship2 container4 dock1)  [10.000]
+18.005: (crane-unload-container-to-truck agent2 agent1 crane1 truck1 container4 dock1)  [5.000]
+23.005: (disembark-crane agent2 crane1 dock1)  [5.000]
+28.006: (board-passenger agent2 truck1 dock1)  [1.000]
+29.006: (drive-truck agent1 truck1 dock1 port1)  [1.000]
+30.007: (drive-truck agent1 truck1 port1 distributor2)  [1.000]
+31.007: (unload-cargo agent1 truck1 container4 cargo9 distributor2)  [2.000]
+33.008: (unload-cargo agent1 truck1 container4 cargo12 distributor2)  [2.000]
+35.009: (unload-cargo agent1 truck1 container4 cargo11 distributor2)  [2.000]
+37.010: (unload-cargo agent1 truck1 container4 cargo10 distributor2)  [2.000]
+39.010: (drive-truck agent1 truck1 distributor2 port1)  [1.000]
+40.011: (drive-truck agent1 truck1 port1 dock1)  [1.000]
+41.011: (disembark-driver agent1 truck1 dock1)  [1.000]
+41.011: (disembark-passenger agent2 truck1 dock1)  [1.000]
+42.012: (operate-crane agent2 crane1 dock1)  [5.000]
+42.012: (board-driver agent1 truck1 dock1)  [1.000]
+47.012: (crane-unload-truck-container agent2 agent1 crane1 truck1 container4 dock1)  [5.000]
+52.013: (unload-container-to-dock agent2 crane1 dock1 container4)  [5.000]
+57.014: (unload-ship agent2 crane1 ship2 container3 dock1)  [10.000]
+67.015: (crane-unload-container-to-truck agent2 agent1 crane1 truck1 container3 dock1)  [5.000]
+72.015: (disembark-crane agent2 crane1 dock1)  [5.000]
+77.016: (board-passenger agent2 truck1 dock1)  [1.000]
+78.016: (drive-truck agent1 truck1 dock1 port1)  [1.000]
+79.017: (drive-truck agent1 truck1 port1 distributor1)  [1.000]
+80.017: (unload-cargo agent1 truck1 container3 cargo8 distributor1)  [2.000]
+82.018: (unload-cargo agent1 truck1 container3 cargo7 distributor1)  [2.000]
+84.019: (unload-cargo agent1 truck1 container3 cargo6 distributor1)  [2.000]
+86.019: (drive-truck agent1 truck1 distributor1 port1)  [1.000]
+87.020: (drive-truck agent1 truck1 port1 dock1)  [1.000]
+88.020: (disembark-driver agent1 truck1 dock1)  [1.000]
+88.020: (disembark-passenger agent2 truck1 dock1)  [1.000]
+89.021: (operate-crane agent2 crane1 dock1)  [5.000]
+89.021: (board-driver agent1 truck1 dock1)  [1.000]
+94.021: (crane-unload-truck-container agent2 agent1 crane1 truck1 container3 dock1)  [5.000]
+99.022: (unload-container-to-dock agent2 crane1 dock1 container3)  [5.000]
+104.023: (unload-ship agent2 crane1 ship1 container2 dock1)  [10.000]
+114.024: (crane-unload-container-to-truck agent2 agent1 crane1 truck1 container2 dock1)  [5.000]
+119.024: (disembark-crane agent2 crane1 dock1)  [5.000]
+124.025: (board-passenger agent2 truck1 dock1)  [1.000]
+125.025: (drive-truck agent1 truck1 dock1 port1)  [1.000]
+126.026: (drive-truck agent1 truck1 port1 distributor2)  [1.000]
+127.026: (unload-cargo agent1 truck1 container2 cargo5 distributor2)  [2.000]
+129.027: (unload-cargo agent1 truck1 container2 cargo4 distributor2)  [2.000]
+131.028: (unload-cargo agent1 truck1 container2 cargo3 distributor2)  [2.000]
+133.028: (drive-truck agent1 truck1 distributor2 port1)  [1.000]
+134.029: (drive-truck agent1 truck1 port1 dock1)  [1.000]
+135.029: (disembark-driver agent1 truck1 dock1)  [1.000]
+135.029: (disembark-passenger agent2 truck1 dock1)  [1.000]
+136.030: (operate-crane agent2 crane1 dock1)  [5.000]
+136.030: (board-driver agent1 truck1 dock1)  [1.000]
+141.030: (crane-unload-truck-container agent2 agent1 crane1 truck1 container2 dock1)  [5.000]
+146.030: (disembark-driver agent1 truck1 dock1)  [1.000]
+146.031: (unload-container-to-dock agent2 crane1 dock1 container2)  [5.000]
+151.032: (unload-ship agent2 crane1 ship1 container1 dock1)  [10.000]
+161.032: (disembark-crane agent2 crane1 dock1)  [5.000]
+166.033: (operate-crane agent1 crane1 dock1)  [5.000]
+166.033: (board-driver agent2 truck1 dock1)  [1.000]
+171.033: (crane-unload-container-to-truck agent1 agent2 crane1 truck1 container1 dock1)  [5.000]
+176.033: (drive-truck agent2 truck1 dock1 port1)  [1.000]
+177.034: (drive-truck agent2 truck1 port1 distributor1)  [1.000]
+178.034: (unload-cargo agent2 truck1 container1 cargo2 distributor1)  [2.000]
+180.035: (unload-cargo agent2 truck1 container1 cargo1 distributor1)  [2.000]
+182.035: (drive-truck agent2 truck1 distributor1 port1)  [1.000]
+183.036: (drive-truck agent2 truck1 port1 dock1)  [1.000]
+184.036: (crane-unload-truck-container agent1 agent2 crane1 truck1 container1 dock1)  [5.000]
+189.037: (unload-container-to-dock agent1 crane1 dock1 container1)  [5.000]
+==101418== 

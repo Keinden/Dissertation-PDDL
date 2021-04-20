@@ -1,0 +1,152 @@
+==73621== Massif, a heap profiler
+==73621== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
+==73621== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==73621== Command: ./ff -o ../../Depot/New\ Design/Satisficing/FSM/domain-fsm.pddl -f ../../Depot/New\ Design/Satisficing/FSM/problem5-fsm.pddl
+==73621== 
+
+ff: parsing domain file
+domain 'DOCK' defined
+ ... done.
+ff: parsing problem file
+problem 'DOCK5' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   32 into depth [1]
+                                  31            [1]
+                                  30            [1]
+                                  29            [1]
+                                  28            [1][2][3][4][5]
+                                  27            [1]
+                                  26            [1]
+                                  25            [1][2]
+                                  24            [1]
+                                  23            [1]
+                                  22            [1][2][3][4][5]
+                                  21            [1]
+                                  20            [1]
+                                  19            [1][2][3]
+
+Enforced Hill-climbing failed !
+switching to Best-first Search now.
+
+advancing to distance :   36
+                          35
+                          34
+                          33
+                          32
+                          31
+                          30
+                          29
+                          28
+                          27
+                          26
+                          25
+                          24
+                          23
+                          22
+                          21
+                          20
+                          19
+                          18
+                          17
+                          14
+                          13
+                          12
+                           9
+                           8
+                           7
+                           6
+                           5
+                           4
+                           3
+                           2
+                           1
+                           0
+
+ff: found legal plan as follows
+
+step    0: IDLE-STATE-TO-TRANSPORT-STATE AGENT3
+        1: IDLE-STATE-TO-DOCK-STATE AGENT2
+        2: BOARD-PASSENGER AGENT2 TRUCK2 PORT1
+        3: BOARD-DRIVER AGENT3 TRUCK2 PORT1
+        4: IDLE-STATE-TO-DOCK-STATE AGENT1
+        5: DRIVE-TRUCK AGENT3 TRUCK2 PORT1 DOCK1
+        6: DISEMBARK-PASSENGER AGENT2 TRUCK2 DOCK1
+        7: DRIVE-TRUCK AGENT3 TRUCK2 DOCK1 PORT1
+        8: OPERATE-CRANE AGENT2 CRANE1 DOCK1
+        9: BOARD-PASSENGER AGENT1 TRUCK2 PORT1
+       10: UNLOAD-SHIP AGENT2 CRANE1 SHIP1 CONTAINER2 DOCK1
+       11: DRIVE-TRUCK AGENT3 TRUCK2 PORT1 DOCK2
+       12: DISEMBARK-PASSENGER AGENT1 TRUCK2 DOCK2
+       13: OPERATE-CRANE AGENT1 CRANE2 DOCK2
+       14: UNLOAD-SHIP AGENT1 CRANE2 SHIP2 CONTAINER4 DOCK2
+       15: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT1 AGENT3 CRANE2 TRUCK2 CONTAINER4 DOCK2
+       16: UNLOAD-SHIP AGENT1 CRANE2 SHIP2 CONTAINER3 DOCK2
+       17: DRIVE-TRUCK AGENT3 TRUCK2 DOCK2 PORT1
+       18: DRIVE-TRUCK AGENT3 TRUCK2 PORT1 DISTRIBUTOR2
+       19: UNLOAD-CARGO AGENT3 TRUCK2 CONTAINER4 CARGO12 DISTRIBUTOR2
+       20: UNLOAD-CARGO AGENT3 TRUCK2 CONTAINER4 CARGO11 DISTRIBUTOR2
+       21: UNLOAD-CARGO AGENT3 TRUCK2 CONTAINER4 CARGO10 DISTRIBUTOR2
+       22: UNLOAD-CARGO AGENT3 TRUCK2 CONTAINER4 CARGO9 DISTRIBUTOR2
+       23: DRIVE-TRUCK AGENT3 TRUCK2 DISTRIBUTOR2 PORT1
+       24: DISEMBARK-DRIVER AGENT3 TRUCK2 PORT1
+       25: BOARD-DRIVER AGENT3 TRUCK1 PORT1
+       26: DRIVE-TRUCK AGENT3 TRUCK1 PORT1 DOCK1
+       27: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT2 AGENT3 CRANE1 TRUCK1 CONTAINER2 DOCK1
+       28: DRIVE-TRUCK AGENT3 TRUCK1 DOCK1 PORT1
+       29: DRIVE-TRUCK AGENT3 TRUCK1 PORT1 DISTRIBUTOR2
+       30: UNLOAD-CARGO AGENT3 TRUCK1 CONTAINER2 CARGO5 DISTRIBUTOR2
+       31: UNLOAD-CARGO AGENT3 TRUCK1 CONTAINER2 CARGO4 DISTRIBUTOR2
+       32: UNLOAD-CARGO AGENT3 TRUCK1 CONTAINER2 CARGO3 DISTRIBUTOR2
+       33: DRIVE-TRUCK AGENT3 TRUCK1 DISTRIBUTOR2 PORT1
+       34: DRIVE-TRUCK AGENT3 TRUCK1 PORT1 DOCK1
+       35: CRANE-UNLOAD-TRUCK-CONTAINER AGENT2 AGENT3 CRANE1 TRUCK1 CONTAINER2 DOCK1
+       36: UNLOAD-CONTAINER-TO-DOCK AGENT2 CRANE1 DOCK1 CONTAINER2
+       37: UNLOAD-SHIP AGENT2 CRANE1 SHIP1 CONTAINER1 DOCK1
+       38: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT2 AGENT3 CRANE1 TRUCK1 CONTAINER1 DOCK1
+       39: DRIVE-TRUCK AGENT3 TRUCK1 DOCK1 PORT1
+       40: DRIVE-TRUCK AGENT3 TRUCK1 PORT1 DISTRIBUTOR1
+       41: UNLOAD-CARGO AGENT3 TRUCK1 CONTAINER1 CARGO2 DISTRIBUTOR1
+       42: UNLOAD-CARGO AGENT3 TRUCK1 CONTAINER1 CARGO1 DISTRIBUTOR1
+       43: DRIVE-TRUCK AGENT3 TRUCK1 DISTRIBUTOR1 PORT1
+       44: DRIVE-TRUCK AGENT3 TRUCK1 PORT1 DOCK1
+       45: CRANE-UNLOAD-TRUCK-CONTAINER AGENT2 AGENT3 CRANE1 TRUCK1 CONTAINER1 DOCK1
+       46: DRIVE-TRUCK AGENT3 TRUCK1 DOCK1 DOCK2
+       47: UNLOAD-CONTAINER-TO-DOCK AGENT2 CRANE1 DOCK1 CONTAINER1
+       48: DRIVE-TRUCK AGENT3 TRUCK1 DOCK2 PORT1
+       49: DISEMBARK-DRIVER AGENT3 TRUCK1 PORT1
+       50: BOARD-DRIVER AGENT3 TRUCK2 PORT1
+       51: DISEMBARK-CRANE AGENT2 CRANE1 DOCK1
+       52: DRIVE-TRUCK AGENT3 TRUCK2 PORT1 DOCK1
+       53: BOARD-PASSENGER AGENT2 TRUCK2 DOCK1
+       54: DRIVE-TRUCK AGENT3 TRUCK2 DOCK1 PORT1
+       55: DOCK-STATE-TO-IDLE-STATE AGENT2
+       56: DISEMBARK-PASSENGER AGENT2 TRUCK2 PORT1
+       57: DRIVE-TRUCK AGENT3 TRUCK2 PORT1 DOCK2
+       58: IDLE-STATE-TO-TRANSPORT-STATE AGENT2
+       59: BOARD-DRIVER AGENT2 TRUCK1 PORT1
+       60: DRIVE-TRUCK AGENT2 TRUCK1 PORT1 DOCK2
+       61: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT1 AGENT2 CRANE2 TRUCK1 CONTAINER3 DOCK2
+       62: CRANE-UNLOAD-TRUCK-CONTAINER AGENT1 AGENT3 CRANE2 TRUCK2 CONTAINER4 DOCK2
+       63: UNLOAD-CONTAINER-TO-DOCK AGENT1 CRANE2 DOCK2 CONTAINER4
+       64: DRIVE-TRUCK AGENT2 TRUCK1 DOCK2 PORT1
+       65: DRIVE-TRUCK AGENT2 TRUCK1 PORT1 DISTRIBUTOR1
+       66: UNLOAD-CARGO AGENT2 TRUCK1 CONTAINER3 CARGO8 DISTRIBUTOR1
+       67: UNLOAD-CARGO AGENT2 TRUCK1 CONTAINER3 CARGO7 DISTRIBUTOR1
+       68: UNLOAD-CARGO AGENT2 TRUCK1 CONTAINER3 CARGO6 DISTRIBUTOR1
+       69: DRIVE-TRUCK AGENT2 TRUCK1 DISTRIBUTOR1 PORT1
+       70: DRIVE-TRUCK AGENT2 TRUCK1 PORT1 DOCK2
+       71: CRANE-UNLOAD-TRUCK-CONTAINER AGENT1 AGENT2 CRANE2 TRUCK1 CONTAINER3 DOCK2
+       72: UNLOAD-CONTAINER-TO-DOCK AGENT1 CRANE2 DOCK2 CONTAINER3
+     
+
+time spent:    0.05 seconds instantiating 1500 easy, 0 hard action templates
+               0.01 seconds reachability analysis, yielding 158 facts and 672 actions
+               0.00 seconds creating final representation with 130 relevant facts
+               0.01 seconds building connectivity graph
+              81.39 seconds searching, evaluating 209738 states, to a max depth of 5
+              81.46 seconds total time
+
+==73621== 

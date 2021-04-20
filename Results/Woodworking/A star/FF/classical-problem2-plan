@@ -1,0 +1,52 @@
+change-position agent3 office1 finish1 (1)
+change-position agent2 office1 pmake1 (1)
+change-position agent1 office1 wproc1 (1)
+make-large-wood wd5 highspeed-saw1 agent1 wproc1 (1)
+make-large-wood wd6 highspeed-saw1 agent1 wproc1 (1)
+make-medium-wood wd4 highspeed-saw1 agent1 wproc1 (1)
+make-medium-wood wd3 highspeed-saw1 agent1 wproc1 (1)
+make-small-wood wd2 highspeed-saw1 agent1 wproc1 (1)
+make-small-wood wd1 highspeed-saw1 agent1 wproc1 (1)
+move_wood agent1 wd1 wproc1 pmake1 (1)
+make-toy agent2 wd1 chisel1 pmake1 (1)
+move_wood agent2 wd1 pmake1 finish1 (1)
+finish-toy agent3 wd1 toy1 red paint-brush1 finish1 (1)
+move_wood agent1 wd2 wproc1 pmake1 (1)
+make-toy agent2 wd2 chisel1 pmake1 (1)
+move_wood agent2 wd2 pmake1 finish1 (1)
+finish-toy agent3 wd2 toy2 blue paint-brush1 finish1 (1)
+move_wood agent1 wd3 wproc1 pmake1 (1)
+make-bookshelf agent2 wd3 planer1 pmake1 (1)
+move_wood agent2 wd3 pmake1 finish1 (1)
+finish-bookshelf agent3 wd3 bkshelf1 blue paint-brush1 finish1 (1)
+move_wood agent1 wd4 wproc1 pmake1 (1)
+make-bookshelf agent2 wd4 planer1 pmake1 (1)
+move_wood agent2 wd4 pmake1 finish1 (1)
+finish-bookshelf agent3 wd4 bkshelf2 green paint-brush1 finish1 (1)
+move_wood agent1 wd5 wproc1 pmake1 (1)
+make-table agent2 wd5 planer1 bandsaw1 pmake1 (1)
+move_wood agent2 wd5 pmake1 finish1 (1)
+finish-table agent3 wd5 table1 green paint-brush1 finish1 (1)
+move_wood agent1 wd6 wproc1 pmake1 (1)
+make-table agent2 wd6 planer1 bandsaw1 pmake1 (1)
+move_wood agent2 wd6 pmake1 finish1 (1)
+finish-table agent3 wd6 table2 red paint-brush1 finish1 (1)
+[t=4.21436s, 43520 KB] Plan length: 33 step(s).
+[t=4.21436s, 43520 KB] Plan cost: 33
+[t=4.21436s, 43520 KB] Expanded 9365 state(s).
+[t=4.21436s, 43520 KB] Reopened 0 state(s).
+[t=4.21436s, 43520 KB] Evaluated 360554 state(s).
+[t=4.21436s, 43520 KB] Evaluations: 360554
+[t=4.21436s, 43520 KB] Generated 545527 state(s).
+[t=4.21436s, 43520 KB] Dead ends: 6488 state(s).
+[t=4.21436s, 43520 KB] Expanded until last jump: 0 state(s).
+[t=4.21436s, 43520 KB] Reopened until last jump: 0 state(s).
+[t=4.21436s, 43520 KB] Evaluated until last jump: 1 state(s).
+[t=4.21436s, 43520 KB] Generated until last jump: 0 state(s).
+[t=4.21436s, 43520 KB] Number of registered states: 360554
+[t=4.21436s, 43520 KB] Int hash set load factor: 360554/524288 = 0.687702
+[t=4.21436s, 43520 KB] Int hash set resizes: 19
+[t=4.21436s, 43520 KB] Search time: 4.20637s
+[t=4.21436s, 43520 KB] Total time: 4.21436s
+Solution found.
+Peak memory: 43520 KB

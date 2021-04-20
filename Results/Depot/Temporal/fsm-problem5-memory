@@ -1,0 +1,11 @@
+desc: (none)
+cmd: ./optic-cplex -N ../../Depot/New Design/Temporal/FSM/temporal-fsm-domain.pddl ../../Depot/New Design/Temporal/FSM/temporal-fsm-problem5.pddl
+time_unit: i
+#-----------
+snapshot=0
+#-----------
+time=0
+mem_heap_B=0
+mem_heap_extra_B=0
+mem_stacks_B=0
+heap_tree=empty

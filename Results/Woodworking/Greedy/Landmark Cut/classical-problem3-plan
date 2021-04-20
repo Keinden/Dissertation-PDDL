@@ -1,0 +1,78 @@
+change-position agent4 office1 finish1 (1)
+change-position agent3 office1 pmake1 (1)
+change-position agent4 finish1 wproc1 (1)
+make-large-wood wd9 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd9 wproc1 pmake1 (1)
+make-small-wood wd5 highspeed-saw1 agent4 wproc1 (1)
+make-table agent3 wd9 planer1 bandsaw1 pmake1 (1)
+make-medium-wood wd6 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd6 wproc1 finish1 (1)
+make-medium-wood wd7 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd7 wproc1 finish1 (1)
+make-medium-wood wd8 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd8 wproc1 finish1 (1)
+make-small-wood wd4 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd4 wproc1 finish1 (1)
+make-small-wood wd3 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd3 wproc1 finish1 (1)
+make-small-wood wd2 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd2 wproc1 finish1 (1)
+make-large-wood wd10 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd10 wproc1 finish1 (1)
+make-small-wood wd1 highspeed-saw1 agent4 wproc1 (1)
+move_wood agent4 wd1 wproc1 finish1 (1)
+move_wood agent4 wd5 wproc1 finish1 (1)
+change-position agent4 wproc1 finish1 (1)
+move_wood agent3 wd9 pmake1 finish1 (1)
+finish-table agent4 wd9 table1 green paint-brush1 finish1 (1)
+move_wood agent4 wd1 finish1 pmake1 (1)
+make-toy agent3 wd1 chisel1 pmake1 (1)
+move_wood agent3 wd1 pmake1 finish1 (1)
+finish-toy agent4 wd1 toy1 red paint-brush1 finish1 (1)
+move_wood agent4 wd10 finish1 pmake1 (1)
+make-table agent3 wd10 planer1 bandsaw1 pmake1 (1)
+move_wood agent3 wd10 pmake1 finish1 (1)
+finish-table agent4 wd10 table2 red paint-brush1 finish1 (1)
+move_wood agent4 wd2 finish1 pmake1 (1)
+make-toy agent3 wd2 chisel1 pmake1 (1)
+move_wood agent3 wd2 pmake1 finish1 (1)
+finish-toy agent4 wd2 toy2 blue paint-brush1 finish1 (1)
+move_wood agent4 wd3 finish1 pmake1 (1)
+make-toy agent3 wd3 chisel1 pmake1 (1)
+move_wood agent3 wd3 pmake1 finish1 (1)
+finish-toy agent4 wd3 toy3 red paint-brush1 finish1 (1)
+move_wood agent4 wd4 finish1 pmake1 (1)
+make-toy agent3 wd4 chisel1 pmake1 (1)
+move_wood agent3 wd4 pmake1 finish1 (1)
+finish-toy agent4 wd4 toy4 red paint-brush1 finish1 (1)
+move_wood agent4 wd5 finish1 pmake1 (1)
+make-toy agent3 wd5 chisel1 pmake1 (1)
+move_wood agent3 wd5 pmake1 finish1 (1)
+finish-toy agent4 wd5 toy5 red paint-brush1 finish1 (1)
+move_wood agent4 wd6 finish1 pmake1 (1)
+make-bookshelf agent3 wd6 planer1 pmake1 (1)
+move_wood agent3 wd6 pmake1 finish1 (1)
+finish-bookshelf agent4 wd6 bkshelf1 blue paint-brush1 finish1 (1)
+move_wood agent4 wd7 finish1 pmake1 (1)
+make-bookshelf agent3 wd7 planer1 pmake1 (1)
+move_wood agent3 wd7 pmake1 finish1 (1)
+finish-bookshelf agent4 wd7 bkshelf2 green paint-brush1 finish1 (1)
+move_wood agent4 wd8 finish1 pmake1 (1)
+make-bookshelf agent3 wd8 planer1 pmake1 (1)
+move_wood agent3 wd8 pmake1 finish1 (1)
+finish-bookshelf agent4 wd8 bkshelf3 blue paint-brush1 finish1 (1)
+[t=1.28373s, 27988 KB] Plan length: 63 step(s).
+[t=1.28373s, 27988 KB] Plan cost: 63
+[t=1.28373s, 27988 KB] Expanded 2692 state(s).
+[t=1.28373s, 27988 KB] Reopened 0 state(s).
+[t=1.28373s, 27988 KB] Evaluated 2865 state(s).
+[t=1.28373s, 27988 KB] Evaluations: 2865
+[t=1.28373s, 27988 KB] Generated 197027 state(s).
+[t=1.28373s, 27988 KB] Dead ends: 172 state(s).
+[t=1.28373s, 27988 KB] Number of registered states: 2865
+[t=1.28373s, 27988 KB] Int hash set load factor: 2865/4096 = 0.699463
+[t=1.28373s, 27988 KB] Int hash set resizes: 12
+[t=1.28373s, 27988 KB] Search time: 1.26774s
+[t=1.28373s, 27988 KB] Total time: 1.28373s
+Solution found.
+Peak memory: 27988 KB

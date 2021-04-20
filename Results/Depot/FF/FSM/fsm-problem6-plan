@@ -1,0 +1,182 @@
+==73986== Massif, a heap profiler
+==73986== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
+==73986== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==73986== Command: ./ff -o ../../Depot/New\ Design/Satisficing/FSM/domain-fsm.pddl -f ../../Depot/New\ Design/Satisficing/FSM/problem6-fsm.pddl
+==73986== 
+
+ff: parsing domain file
+domain 'DOCK' defined
+ ... done.
+ff: parsing problem file
+problem 'DOCK6' defined
+ ... done.
+
+
+
+Cueing down from goal distance:   44 into depth [1]
+                                  43            [1]
+                                  42            [1]
+                                  41            [1]
+                                  40            [1][2][3][4][5]
+                                  39            [1]
+                                  38            [1]
+                                  37            [1][2]
+                                  36            [1]
+                                  35            [1]
+                                  34            [1][2][3][4][5][6]
+                                  33            [1][2][3][4][5]
+                                  32            [1][2]
+                                  31            [1]
+                                  30            [1][2][3][4][5][6]
+                                  29            [1][2][3][4][5]
+                                  28            [1][2]
+                                  27            [1]
+                                  26            [1][2][3][4][5][6]
+                                  25            [1][2][3][4][5]
+                                  24            [1][2]
+                                  23            [1]
+                                  22            [1][2][3][4][5][6]
+                                  21            [1][2][3]
+                                  20            [1][2][3]
+                                  19            [1]
+                                  18            [1][2][3][4][5]
+                                  17            [1][2][3]
+                                  16            [1][2][3]
+                                  15            [1]
+                                  14            [1][2][3][4][5]
+                                  13            [1][2][3]
+                                  12            [1][2][3]
+                                  11            [1]
+                                  10            [1][2][3][4][5]
+                                   9            [1][2][3]
+                                   8            [1][2]
+                                   7            [1]
+                                   6            [1][2]
+                                   5            [1]
+                                   4            [1][2]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+Cueing down from goal distance:    5 into depth [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+
+step    0: IDLE-STATE-TO-DOCK-STATE AGENT4
+        1: IDLE-STATE-TO-TRANSPORT-STATE AGENT3
+        2: BOARD-PASSENGER AGENT4 TRUCK4 PORT1
+        3: BOARD-DRIVER AGENT3 TRUCK4 PORT1
+        4: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK1
+        5: DISEMBARK-PASSENGER AGENT4 TRUCK4 DOCK1
+        6: DRIVE-TRUCK AGENT3 TRUCK4 DOCK1 PORT1
+        7: IDLE-STATE-TO-DOCK-STATE AGENT2
+        8: BOARD-PASSENGER AGENT2 TRUCK4 PORT1
+        9: OPERATE-CRANE AGENT4 CRANE1 DOCK1
+       10: UNLOAD-SHIP AGENT4 CRANE1 SHIP2 CONTAINER3 DOCK1
+       11: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK2
+       12: DISEMBARK-PASSENGER AGENT2 TRUCK4 DOCK2
+       13: OPERATE-CRANE AGENT2 CRANE2 DOCK2
+       14: UNLOAD-SHIP AGENT2 CRANE2 SHIP4 CONTAINER7 DOCK2
+       15: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT2 AGENT3 CRANE2 TRUCK4 CONTAINER7 DOCK2
+       16: DRIVE-TRUCK AGENT3 TRUCK4 DOCK2 PORT1
+       17: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR1
+       18: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER7 CARGO13 DISTRIBUTOR1
+       19: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR1 PORT1
+       20: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR2
+       21: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER7 CARGO14 DISTRIBUTOR2
+       22: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR2 PORT1
+       23: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK2
+       24: CRANE-UNLOAD-TRUCK-CONTAINER AGENT2 AGENT3 CRANE2 TRUCK4 CONTAINER7 DOCK2
+       25: UNLOAD-CONTAINER-TO-DOCK AGENT2 CRANE2 DOCK2 CONTAINER7
+       26: UNLOAD-SHIP AGENT2 CRANE2 SHIP3 CONTAINER5 DOCK2
+       27: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT2 AGENT3 CRANE2 TRUCK4 CONTAINER5 DOCK2
+       28: DRIVE-TRUCK AGENT3 TRUCK4 DOCK2 PORT1
+       29: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR2
+       30: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER5 CARGO9 DISTRIBUTOR2
+       31: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER5 CARGO10 DISTRIBUTOR2
+       32: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR2 PORT1
+       33: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK2
+       34: CRANE-UNLOAD-TRUCK-CONTAINER AGENT2 AGENT3 CRANE2 TRUCK4 CONTAINER5 DOCK2
+       35: UNLOAD-CONTAINER-TO-DOCK AGENT2 CRANE2 DOCK2 CONTAINER5
+       36: UNLOAD-SHIP AGENT2 CRANE2 SHIP3 CONTAINER6 DOCK2
+       37: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT2 AGENT3 CRANE2 TRUCK4 CONTAINER6 DOCK2
+       38: DRIVE-TRUCK AGENT3 TRUCK4 DOCK2 PORT1
+       39: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR2
+       40: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER6 CARGO11 DISTRIBUTOR2
+       41: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER6 CARGO12 DISTRIBUTOR2
+       42: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR2 PORT1
+       43: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK2
+       44: CRANE-UNLOAD-TRUCK-CONTAINER AGENT2 AGENT3 CRANE2 TRUCK4 CONTAINER6 DOCK2
+       45: UNLOAD-CONTAINER-TO-DOCK AGENT2 CRANE2 DOCK2 CONTAINER6
+       46: UNLOAD-SHIP AGENT2 CRANE2 SHIP4 CONTAINER8 DOCK2
+       47: DRIVE-TRUCK AGENT3 TRUCK4 DOCK2 DOCK1
+       48: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT4 AGENT3 CRANE1 TRUCK4 CONTAINER3 DOCK1
+       49: DRIVE-TRUCK AGENT3 TRUCK4 DOCK1 PORT1
+       50: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR1
+       51: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER3 CARGO6 DISTRIBUTOR1
+       52: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR1 PORT1
+       53: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR2
+       54: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER3 CARGO5 DISTRIBUTOR2
+       55: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR2 PORT1
+       56: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK1
+       57: CRANE-UNLOAD-TRUCK-CONTAINER AGENT4 AGENT3 CRANE1 TRUCK4 CONTAINER3 DOCK1
+       58: UNLOAD-CONTAINER-TO-DOCK AGENT4 CRANE1 DOCK1 CONTAINER3
+       59: UNLOAD-SHIP AGENT4 CRANE1 SHIP1 CONTAINER1 DOCK1
+       60: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT4 AGENT3 CRANE1 TRUCK4 CONTAINER1 DOCK1
+       61: DRIVE-TRUCK AGENT3 TRUCK4 DOCK1 PORT1
+       62: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR1
+       63: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER1 CARGO1 DISTRIBUTOR1
+       64: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER1 CARGO2 DISTRIBUTOR1
+       65: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR1 PORT1
+       66: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK1
+       67: CRANE-UNLOAD-TRUCK-CONTAINER AGENT4 AGENT3 CRANE1 TRUCK4 CONTAINER1 DOCK1
+       68: UNLOAD-CONTAINER-TO-DOCK AGENT4 CRANE1 DOCK1 CONTAINER1
+       69: UNLOAD-SHIP AGENT4 CRANE1 SHIP1 CONTAINER2 DOCK1
+       70: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT4 AGENT3 CRANE1 TRUCK4 CONTAINER2 DOCK1
+       71: DRIVE-TRUCK AGENT3 TRUCK4 DOCK1 PORT1
+       72: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR2
+       73: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER2 CARGO3 DISTRIBUTOR2
+       74: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER2 CARGO4 DISTRIBUTOR2
+       75: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR2 PORT1
+       76: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK1
+       77: CRANE-UNLOAD-TRUCK-CONTAINER AGENT4 AGENT3 CRANE1 TRUCK4 CONTAINER2 DOCK1
+       78: UNLOAD-CONTAINER-TO-DOCK AGENT4 CRANE1 DOCK1 CONTAINER2
+       79: UNLOAD-SHIP AGENT4 CRANE1 SHIP2 CONTAINER4 DOCK1
+       80: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT4 AGENT3 CRANE1 TRUCK4 CONTAINER4 DOCK1
+       81: DRIVE-TRUCK AGENT3 TRUCK4 DOCK1 PORT1
+       82: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR1
+       83: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER4 CARGO7 DISTRIBUTOR1
+       84: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER4 CARGO8 DISTRIBUTOR1
+       85: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR1 PORT1
+       86: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK1
+       87: CRANE-UNLOAD-TRUCK-CONTAINER AGENT4 AGENT3 CRANE1 TRUCK4 CONTAINER4 DOCK1
+       88: DRIVE-TRUCK AGENT3 TRUCK4 DOCK1 PORT1
+       89: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK2
+       90: CRANE-UNLOAD-CONTAINER-TO-TRUCK AGENT2 AGENT3 CRANE2 TRUCK4 CONTAINER8 DOCK2
+       91: DRIVE-TRUCK AGENT3 TRUCK4 DOCK2 PORT1
+       92: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DISTRIBUTOR1
+       93: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER8 CARGO15 DISTRIBUTOR1
+       94: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR1 PORT2
+       95: DRIVE-TRUCK AGENT3 TRUCK4 PORT2 DISTRIBUTOR2
+       96: UNLOAD-CARGO AGENT3 TRUCK4 CONTAINER8 CARGO16 DISTRIBUTOR2
+       97: DRIVE-TRUCK AGENT3 TRUCK4 DISTRIBUTOR2 PORT1
+       98: DRIVE-TRUCK AGENT3 TRUCK4 PORT1 DOCK2
+       99: UNLOAD-CONTAINER-TO-DOCK AGENT4 CRANE1 DOCK1 CONTAINER4
+      100: CRANE-UNLOAD-TRUCK-CONTAINER AGENT2 AGENT3 CRANE2 TRUCK4 CONTAINER8 DOCK2
+      101: UNLOAD-CONTAINER-TO-DOCK AGENT2 CRANE2 DOCK2 CONTAINER8
+     
+
+time spent:    0.07 seconds instantiating 9296 easy, 0 hard action templates
+               0.02 seconds reachability analysis, yielding 282 facts and 3296 actions
+               0.01 seconds creating final representation with 242 relevant facts
+               0.01 seconds building connectivity graph
+               0.27 seconds searching, evaluating 1227 states, to a max depth of 6
+               0.38 seconds total time
+
+==73986== 

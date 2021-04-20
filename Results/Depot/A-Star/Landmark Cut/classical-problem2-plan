@@ -1,0 +1,45 @@
+(board-driver agent1 truck2 port1)
+(board-passenger agent2 truck2 port1)
+(drive-truck agent1 truck2 port1 dock1)
+(disembark-passenger agent2 truck2 dock1)
+(operate-crane agent2 crane1 dock1)
+(unload-ship agent2 crane1 ship1 container1 dock1)
+(crane-load-container-to-truck agent2 agent1 crane1 truck2 container1 dock1)
+(drive-truck agent1 truck2 dock1 port1)
+(drive-truck agent1 truck2 port1 distributor1)
+(unload-cargo agent1 truck2 container1 cargo2 distributor1)
+(unload-cargo agent1 truck2 container1 cargo1 distributor1)
+(drive-truck agent1 truck2 distributor1 port1)
+(drive-truck agent1 truck2 port1 dock1)
+(crane-unload-truck-container agent2 agent1 crane1 truck2 container1 dock1)
+(crane-unload-container-to-dock agent2 crane1 dock1 container1)
+(unload-ship agent2 crane1 ship1 container2 dock1)
+(crane-load-container-to-truck agent2 agent1 crane1 truck2 container2 dock1)
+(drive-truck agent1 truck2 dock1 port1)
+(drive-truck agent1 truck2 port1 distributor2)
+(unload-cargo agent1 truck2 container2 cargo3 distributor2)
+(drive-truck agent1 truck2 distributor2 port1)
+(drive-truck agent1 truck2 port1 dock1)
+(crane-unload-truck-container agent2 agent1 crane1 truck2 container2 dock1)
+(crane-unload-container-to-dock agent2 crane1 dock1 container2)
+; cost = 24 (unit cost)
+[t=0.1472s, 24852 KB] Plan length: 24 step(s).
+[t=0.1472s, 24852 KB] Plan cost: 24
+[t=0.1472s, 24852 KB] Expanded 3040 state(s).
+[t=0.1472s, 24852 KB] Reopened 0 state(s).
+[t=0.1472s, 24852 KB] Evaluated 6365 state(s).
+[t=0.1472s, 24852 KB] Evaluations: 6365
+[t=0.1472s, 24852 KB] Generated 13115 state(s).
+[t=0.1472s, 24852 KB] Dead ends: 884 state(s).
+[t=0.1472s, 24852 KB] Expanded until last jump: 3034 state(s).
+[t=0.1472s, 24852 KB] Reopened until last jump: 0 state(s).
+[t=0.1472s, 24852 KB] Evaluated until last jump: 6348 state(s).
+[t=0.1472s, 24852 KB] Generated until last jump: 13094 state(s).
+[t=0.1472s, 24852 KB] Number of registered states: 6365
+[t=0.1472s, 24852 KB] Int hash set load factor: 6365/8192 = 0.776978
+[t=0.1472s, 24852 KB] Int hash set resizes: 13
+[t=0.1472s, 24852 KB] Search time: 0.14462s
+[t=0.1472s, 24852 KB] Total time: 0.1472s
+Solution found.
+Peak memory: 24852 KB
+

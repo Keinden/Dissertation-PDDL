@@ -1,0 +1,43 @@
+(idle-state-to-dock-state agent2)
+(idle-state-to-transport-state agent1)
+(board-driver agent1 truck1 port1)
+(board-passenger agent2 truck1 port1)
+(drive-truck agent1 truck1 port1 dock1)
+(disembark-passenger agent2 truck1 dock1)
+(operate-crane agent2 crane1 dock1)
+(unload-ship agent2 crane1 ship1 container1 dock1)
+(crane-unload-container-to-truck agent2 agent1 crane1 truck1 container1 dock1)
+(drive-truck agent1 truck1 dock1 port1)
+(drive-truck agent1 truck1 port1 distributor1)
+(unload-cargo agent1 truck1 container1 cargo2 distributor1)
+(unload-cargo agent1 truck1 container1 cargo1 distributor1)
+(drive-truck agent1 truck1 distributor1 port1)
+(drive-truck agent1 truck1 port1 dock1)
+(crane-unload-truck-container agent2 agent1 crane1 truck1 container1 dock1)
+(unload-container-to-dock agent2 crane1 dock1 container1)
+(unload-ship agent2 crane1 ship1 container2 dock1)
+(crane-unload-container-to-truck agent2 agent1 crane1 truck1 container2 dock1)
+(drive-truck agent1 truck1 dock1 port1)
+(drive-truck agent1 truck1 port1 distributor2)
+(unload-cargo agent1 truck1 container2 cargo3 distributor2)
+(drive-truck agent1 truck1 distributor2 port1)
+(drive-truck agent1 truck1 port1 dock1)
+(crane-unload-truck-container agent2 agent1 crane1 truck1 container2 dock1)
+(unload-container-to-dock agent2 crane1 dock1 container2)
+; cost = 26 (unit cost)
+[t=0.00259745s, 24680 KB] Plan length: 26 step(s).
+[t=0.00259745s, 24680 KB] Plan cost: 26
+[t=0.00259745s, 24680 KB] Expanded 55 state(s).
+[t=0.00259745s, 24680 KB] Reopened 0 state(s).
+[t=0.00259745s, 24680 KB] Evaluated 79 state(s).
+[t=0.00259745s, 24680 KB] Evaluations: 79
+[t=0.00259745s, 24680 KB] Generated 371 state(s).
+[t=0.00259745s, 24680 KB] Dead ends: 23 state(s).
+[t=0.00259745s, 24680 KB] Number of registered states: 79
+[t=0.00259745s, 24680 KB] Int hash set load factor: 79/128 = 0.617188
+[t=0.00259745s, 24680 KB] Int hash set resizes: 7
+[t=0.00259745s, 24680 KB] Search time: 0.00093474s
+[t=0.00259745s, 24680 KB] Total time: 0.00259745s
+Solution found.
+Peak memory: 24680 KB
+

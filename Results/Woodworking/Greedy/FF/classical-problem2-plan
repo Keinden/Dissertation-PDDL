@@ -1,0 +1,48 @@
+change-position agent3 office1 wproc1 (1)
+make-large-wood wd5 highspeed-saw1 agent3 wproc1 (1)
+make-large-wood wd6 highspeed-saw1 agent3 wproc1 (1)
+make-medium-wood wd4 highspeed-saw1 agent3 wproc1 (1)
+make-medium-wood wd3 highspeed-saw1 agent3 wproc1 (1)
+make-small-wood wd2 highspeed-saw1 agent3 wproc1 (1)
+make-small-wood wd1 highspeed-saw1 agent3 wproc1 (1)
+move_wood agent3 wd1 wproc1 pmake1 (1)
+move_wood agent3 wd2 wproc1 pmake1 (1)
+move_wood agent3 wd3 wproc1 pmake1 (1)
+move_wood agent3 wd4 wproc1 pmake1 (1)
+move_wood agent3 wd5 wproc1 pmake1 (1)
+move_wood agent3 wd6 wproc1 pmake1 (1)
+change-position agent3 wproc1 pmake1 (1)
+make-bookshelf agent3 wd3 planer1 pmake1 (1)
+make-bookshelf agent3 wd4 planer1 pmake1 (1)
+make-table agent3 wd5 planer1 bandsaw1 pmake1 (1)
+make-table agent3 wd6 planer1 bandsaw1 pmake1 (1)
+make-toy agent3 wd2 chisel1 pmake1 (1)
+make-toy agent3 wd1 chisel1 pmake1 (1)
+move_wood agent3 wd1 pmake1 finish1 (1)
+move_wood agent3 wd2 pmake1 finish1 (1)
+move_wood agent3 wd3 pmake1 finish1 (1)
+move_wood agent3 wd4 pmake1 finish1 (1)
+move_wood agent3 wd5 pmake1 finish1 (1)
+move_wood agent3 wd6 pmake1 finish1 (1)
+change-position agent3 pmake1 finish1 (1)
+finish-bookshelf agent3 wd3 bkshelf1 blue paint-brush1 finish1 (1)
+finish-bookshelf agent3 wd4 bkshelf2 green paint-brush1 finish1 (1)
+finish-table agent3 wd5 table1 green paint-brush1 finish1 (1)
+finish-table agent3 wd6 table2 red paint-brush1 finish1 (1)
+finish-toy agent3 wd2 toy2 blue paint-brush1 finish1 (1)
+finish-toy agent3 wd1 toy1 red paint-brush1 finish1 (1)
+[t=0.0116106s, 25216 KB] Plan length: 33 step(s).
+[t=0.0116106s, 25216 KB] Plan cost: 33
+[t=0.0116106s, 25216 KB] Expanded 64 state(s).
+[t=0.0116106s, 25216 KB] Reopened 0 state(s).
+[t=0.0116106s, 25216 KB] Evaluated 65 state(s).
+[t=0.0116106s, 25216 KB] Evaluations: 65
+[t=0.0116106s, 25216 KB] Generated 2772 state(s).
+[t=0.0116106s, 25216 KB] Dead ends: 0 state(s).
+[t=0.0116106s, 25216 KB] Number of registered states: 65
+[t=0.0116106s, 25216 KB] Int hash set load factor: 65/128 = 0.507812
+[t=0.0116106s, 25216 KB] Int hash set resizes: 7
+[t=0.0116106s, 25216 KB] Search time: 0.00398842s
+[t=0.0116106s, 25216 KB] Total time: 0.0116106s
+Solution found.
+Peak memory: 25216 KB

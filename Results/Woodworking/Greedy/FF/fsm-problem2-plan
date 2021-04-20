@@ -1,0 +1,51 @@
+change-position agent3 office1 wproc1 (1)
+change-position agent1 office1 cmake1 (1)
+change_into_wood_processing_state agent3 (1)
+make-large-wood wd5 highspeed-saw1 agent3 wproc1 (1)
+make-large-wood wd6 highspeed-saw1 agent3 wproc1 (1)
+make-medium-wood wd4 highspeed-saw1 agent3 wproc1 (1)
+make-medium-wood wd3 highspeed-saw1 agent3 wproc1 (1)
+make-small-wood wd2 highspeed-saw1 agent3 wproc1 (1)
+make-small-wood wd1 highspeed-saw1 agent3 wproc1 (1)
+move_wood agent3 wd1 wproc1 cmake1 (1)
+move_wood agent3 wd2 wproc1 cmake1 (1)
+move_wood agent3 wd3 wproc1 cmake1 (1)
+move_wood agent3 wd4 wproc1 cmake1 (1)
+move_wood agent3 wd5 wproc1 cmake1 (1)
+move_wood agent3 wd6 wproc1 cmake1 (1)
+change_into_product_state agent1 (1)
+change-position agent2 office1 finish1 (1)
+make-bookshelf agent1 wd3 planer1 cmake1 (1)
+make-bookshelf agent1 wd4 planer1 cmake1 (1)
+make-table agent1 wd5 planer1 bandsaw1 cmake1 (1)
+make-table agent1 wd6 planer1 bandsaw1 cmake1 (1)
+make-toy agent1 wd2 chisel1 cmake1 (1)
+make-toy agent1 wd1 chisel1 cmake1 (1)
+move_wood agent1 wd1 cmake1 finish1 (1)
+move_wood agent1 wd2 cmake1 finish1 (1)
+move_wood agent1 wd3 cmake1 finish1 (1)
+move_wood agent1 wd4 cmake1 finish1 (1)
+move_wood agent1 wd5 cmake1 finish1 (1)
+move_wood agent1 wd6 cmake1 finish1 (1)
+change_into_finish agent2 (1)
+finish-bookshelf agent2 wd3 bkshelf1 blue paint-brush1 finish1 (1)
+finish-bookshelf agent2 wd4 bkshelf2 green paint-brush1 finish1 (1)
+finish-table agent2 wd5 table1 green paint-brush1 finish1 (1)
+finish-table agent2 wd6 table2 red paint-brush1 finish1 (1)
+finish-toy agent2 wd2 toy2 blue paint-brush1 finish1 (1)
+finish-toy agent2 wd1 toy1 red paint-brush1 finish1 (1)
+[t=0.0119887s, 25232 KB] Plan length: 36 step(s).
+[t=0.0119887s, 25232 KB] Plan cost: 36
+[t=0.0119887s, 25232 KB] Expanded 70 state(s).
+[t=0.0119887s, 25232 KB] Reopened 0 state(s).
+[t=0.0119887s, 25232 KB] Evaluated 71 state(s).
+[t=0.0119887s, 25232 KB] Evaluations: 71
+[t=0.0119887s, 25232 KB] Generated 4634 state(s).
+[t=0.0119887s, 25232 KB] Dead ends: 0 state(s).
+[t=0.0119887s, 25232 KB] Number of registered states: 71
+[t=0.0119887s, 25232 KB] Int hash set load factor: 71/128 = 0.554688
+[t=0.0119887s, 25232 KB] Int hash set resizes: 7
+[t=0.0119887s, 25232 KB] Search time: 0.00400102s
+[t=0.0119887s, 25232 KB] Total time: 0.0119887s
+Solution found.
+Peak memory: 25232 KB

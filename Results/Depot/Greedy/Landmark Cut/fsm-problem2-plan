@@ -1,0 +1,49 @@
+(idle-state-to-transport-state agent2)
+(board-driver agent2 truck1 port1)
+(board-passenger agent1 truck1 port1)
+(idle-state-to-dock-state agent1)
+(drive-truck agent2 truck1 port1 dock1)
+(disembark-passenger agent1 truck1 dock1)
+(operate-crane agent1 crane1 dock1)
+(unload-ship agent1 crane1 ship1 container1 dock1)
+(crane-unload-container-to-truck agent1 agent2 crane1 truck1 container1 dock1)
+(unload-ship agent1 crane1 ship1 container2 dock1)
+(drive-truck agent2 truck1 dock1 port1)
+(drive-truck agent2 truck1 port1 distributor1)
+(unload-cargo agent2 truck1 container1 cargo2 distributor1)
+(unload-cargo agent2 truck1 container1 cargo1 distributor1)
+(drive-truck agent2 truck1 distributor1 port1)
+(disembark-driver agent2 truck1 port1)
+(board-driver agent2 truck2 port1)
+(drive-truck agent2 truck2 port1 dock1)
+(crane-unload-container-to-truck agent1 agent2 crane1 truck2 container2 dock1)
+(drive-truck agent2 truck2 dock1 port1)
+(drive-truck agent2 truck2 port1 distributor2)
+(unload-cargo agent2 truck2 container2 cargo3 distributor2)
+(drive-truck agent2 truck2 distributor2 port1)
+(drive-truck agent2 truck2 port1 dock1)
+(crane-unload-truck-container agent1 agent2 crane1 truck2 container2 dock1)
+(drive-truck agent2 truck2 dock1 port1)
+(disembark-driver agent2 truck2 port1)
+(board-driver agent2 truck1 port1)
+(drive-truck agent2 truck1 port1 dock1)
+(unload-container-to-dock agent1 crane1 dock1 container2)
+(crane-unload-truck-container agent1 agent2 crane1 truck1 container1 dock1)
+(unload-container-to-dock agent1 crane1 dock1 container1)
+; cost = 32 (unit cost)
+[t=0.0291315s, 24684 KB] Plan length: 32 step(s).
+[t=0.0291315s, 24684 KB] Plan cost: 32
+[t=0.0291315s, 24684 KB] Expanded 251 state(s).
+[t=0.0291315s, 24684 KB] Reopened 0 state(s).
+[t=0.0291315s, 24684 KB] Evaluated 745 state(s).
+[t=0.0291315s, 24684 KB] Evaluations: 995
+[t=0.0291315s, 24684 KB] Generated 1373 state(s).
+[t=0.0291315s, 24684 KB] Dead ends: 80 state(s).
+[t=0.0291315s, 24684 KB] Number of registered states: 745
+[t=0.0291315s, 24684 KB] Int hash set load factor: 745/1024 = 0.727539
+[t=0.0291315s, 24684 KB] Int hash set resizes: 10
+[t=0.0291315s, 24684 KB] Search time: 0.0265126s
+[t=0.0291315s, 24684 KB] Total time: 0.0291315s
+Solution found.
+Peak memory: 24684 KB
+

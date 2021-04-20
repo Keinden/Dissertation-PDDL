@@ -1,0 +1,74 @@
+(board-passenger agent1 truck1 port1)
+(board-driver agent2 truck1 port1)
+(drive-truck agent2 truck1 port1 dock2)
+(disembark-passenger agent1 truck1 dock2)
+(operate-crane agent1 crane2 dock2)
+(unload-ship agent1 crane2 ship2 container4 dock2)
+(crane-load-container-to-truck agent1 agent2 crane2 truck1 container4 dock2)
+(drive-truck agent2 truck1 dock2 port1)
+(board-passenger agent3 truck1 port1)
+(drive-truck agent2 truck1 port1 distributor2)
+(unload-cargo agent2 truck1 container4 cargo9 distributor2)
+(unload-cargo agent2 truck1 container4 cargo12 distributor2)
+(unload-cargo agent2 truck1 container4 cargo11 distributor2)
+(unload-cargo agent2 truck1 container4 cargo10 distributor2)
+(drive-truck agent2 truck1 distributor2 port1)
+(drive-truck agent2 truck1 port1 dock2)
+(crane-unload-truck-container agent1 agent2 crane2 truck1 container4 dock2)
+(crane-unload-container-to-dock agent1 crane2 dock2 container4)
+(unload-ship agent1 crane2 ship2 container3 dock2)
+(crane-load-container-to-truck agent1 agent2 crane2 truck1 container3 dock2)
+(drive-truck agent2 truck1 dock2 port1)
+(drive-truck agent2 truck1 port1 distributor1)
+(unload-cargo agent2 truck1 container3 cargo8 distributor1)
+(unload-cargo agent2 truck1 container3 cargo7 distributor1)
+(unload-cargo agent2 truck1 container3 cargo6 distributor1)
+(drive-truck agent2 truck1 distributor1 port1)
+(drive-truck agent2 truck1 port1 dock2)
+(crane-unload-truck-container agent1 agent2 crane2 truck1 container3 dock2)
+(drive-truck agent2 truck1 dock2 dock1)
+(disembark-passenger agent3 truck1 dock1)
+(operate-crane agent3 crane1 dock1)
+(unload-ship agent3 crane1 ship1 container2 dock1)
+(crane-load-container-to-truck agent3 agent2 crane1 truck1 container2 dock1)
+(drive-truck agent2 truck1 dock1 port1)
+(drive-truck agent2 truck1 port1 distributor2)
+(unload-cargo agent2 truck1 container2 cargo5 distributor2)
+(unload-cargo agent2 truck1 container2 cargo4 distributor2)
+(unload-cargo agent2 truck1 container2 cargo3 distributor2)
+(drive-truck agent2 truck1 distributor2 port1)
+(crane-unload-container-to-dock agent1 crane2 dock2 container3)
+(drive-truck agent2 truck1 port1 dock1)
+(crane-unload-truck-container agent3 agent2 crane1 truck1 container2 dock1)
+(crane-unload-container-to-dock agent3 crane1 dock1 container2)
+(unload-ship agent3 crane1 ship1 container1 dock1)
+(crane-load-container-to-truck agent3 agent2 crane1 truck1 container1 dock1)
+(drive-truck agent2 truck1 dock1 port1)
+(drive-truck agent2 truck1 port1 distributor1)
+(unload-cargo agent2 truck1 container1 cargo2 distributor1)
+(unload-cargo agent2 truck1 container1 cargo1 distributor1)
+(drive-truck agent2 truck1 distributor1 port1)
+(drive-truck agent2 truck1 port1 dock1)
+(crane-unload-truck-container agent3 agent2 crane1 truck1 container1 dock1)
+(crane-unload-container-to-dock agent3 crane1 dock1 container1)
+; cost = 53 (unit cost)
+[t=446.473s, 1586228 KB] Plan length: 53 step(s).
+[t=446.473s, 1586228 KB] Plan cost: 53
+[t=446.473s, 1586228 KB] Expanded 9994031 state(s).
+[t=446.473s, 1586228 KB] Reopened 247720 state(s).
+[t=446.473s, 1586228 KB] Evaluated 28352964 state(s).
+[t=446.473s, 1586228 KB] Evaluations: 28352964
+[t=446.473s, 1586228 KB] Generated 65816560 state(s).
+[t=446.473s, 1586228 KB] Dead ends: 7038743 state(s).
+[t=446.473s, 1586228 KB] Expanded until last jump: 9994023 state(s).
+[t=446.473s, 1586228 KB] Reopened until last jump: 247720 state(s).
+[t=446.473s, 1586228 KB] Evaluated until last jump: 28352931 state(s).
+[t=446.473s, 1586228 KB] Generated until last jump: 65816520 state(s).
+[t=446.473s, 1586228 KB] Number of registered states: 28352964
+[t=446.473s, 1586228 KB] Int hash set load factor: 28352964/67108864 = 0.422492
+[t=446.473s, 1586228 KB] Int hash set resizes: 26
+[t=446.473s, 1586228 KB] Search time: 446.467s
+[t=446.473s, 1586228 KB] Total time: 446.473s
+Solution found.
+Peak memory: 1586228 KB
+

@@ -1,0 +1,43 @@
+==101013== Massif, a heap profiler
+==101013== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
+==101013== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==101013== Command: ./optic-cplex -N ../../Woodworking/Temporal/FSM/domain-fsm.pddl ../../Woodworking/Temporal/FSM/problem1_fsm.pddl
+==101013== 
+Number of literals: 89
+Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
+No analytic limits found, not considering limit effects of goal-only operators
+All the ground actions in this problem are compression-safe
+Initial heuristic = 18.000, admissible cost estimate 0.000
+b (17.000 | 2.000)b (16.000 | 10.001)b (15.000 | 12.001)b (14.000 | 15.001)b (13.000 | 17.002)b (12.000 | 25.003)b (11.000 | 27.003)b (10.000 | 29.003)b (9.000 | 31.002)b (8.000 | 33.001)b (7.000 | 38.003)b (6.000 | 57.003)b (5.000 | 59.003)b (4.000 | 67.004)b (3.000 | 69.004)b (2.000 | 71.004)b (1.000 | 74.005)(G);;;; Solution Found
+; States evaluated: 64
+; Cost: 84.006
+; Time 1.11
+0.000: (move-location agent1 office1 wproc1)  [2.000]
+0.000: (move-location agent2 office1 finish1)  [2.000]
+2.001: (make-small-wood wd1 highspeed-saw1 agent1 wproc1)  [8.000]
+10.001: (move-wood agent1 wd1 wproc1 finish1)  [2.000]
+10.002: (make-medium-wood wd2 highspeed-saw1 agent1 wproc1)  [5.000]
+12.002: (move-wood agent2 wd1 finish1 cmake1)  [2.000]
+14.002: (move-location agent2 finish1 cmake1)  [2.000]
+15.002: (move-wood agent1 wd2 wproc1 finish1)  [2.000]
+15.003: (make-large-wood wd3 highspeed-saw1 agent1 wproc1)  [10.000]
+16.002: (make-toy agent2 wd1 chisel1 cmake1)  [15.000]
+25.003: (move-wood agent1 wd3 wproc1 finish1)  [2.000]
+27.003: (move-location agent1 wproc1 finish1)  [2.000]
+29.003: (move-wood agent1 wd3 finish1 cmake1)  [2.000]
+29.003: (move-wood agent1 wd2 finish1 cmake1)  [2.000]
+31.002: (move-wood agent2 wd1 cmake1 finish1)  [2.000]
+33.002: (move-location agent2 cmake1 finish1)  [2.000]
+33.003: (finish-toy agent1 wd1 toy1 red paint-brush1 finish1)  [5.000]
+35.003: (move-location agent2 finish1 cmake1)  [2.000]
+37.003: (make-table agent2 wd3 planer1 bandsaw1 cmake1)  [20.000]
+38.003: (move-location agent1 finish1 cmake1)  [2.000]
+57.004: (make-bookshelf agent1 wd2 planer1 cmake1)  [10.000]
+67.004: (move-wood agent2 wd2 cmake1 finish1)  [2.000]
+67.004: (move-location agent1 cmake1 finish1)  [2.000]
+69.005: (finish-bookshelf agent1 wd2 bkshelf1 blue paint-brush1 finish1)  [5.000]
+72.005: (move-wood agent2 wd3 cmake1 finish1)  [2.000]
+74.005: (move-location agent2 cmake1 finish1)  [2.000]
+74.006: (finish-table agent1 wd3 table1 green paint-brush1 finish1)  [10.000]
+==101013== 

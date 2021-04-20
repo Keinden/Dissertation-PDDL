@@ -1,0 +1,35 @@
+change-position agent2 office1 finish1 (1)
+change-position agent1 office1 pmake1 (1)
+change-position agent2 finish1 wproc1 (1)
+make-large-wood wd3 highspeed-saw1 agent2 wproc1 (1)
+move_wood agent2 wd3 wproc1 pmake1 (1)
+make-table agent1 wd3 planer1 bandsaw1 pmake1 (1)
+make-small-wood wd1 highspeed-saw1 agent2 wproc1 (1)
+move_wood agent2 wd1 wproc1 pmake1 (1)
+make-medium-wood wd2 highspeed-saw1 agent2 wproc1 (1)
+move_wood agent2 wd2 wproc1 finish1 (1)
+make-toy agent1 wd1 chisel1 pmake1 (1)
+move_wood agent1 wd3 pmake1 finish1 (1)
+change-position agent2 wproc1 finish1 (1)
+finish-table agent2 wd3 table1 green paint-brush1 finish1 (1)
+move_wood agent1 wd1 pmake1 finish1 (1)
+finish-toy agent2 wd1 toy1 red paint-brush1 finish1 (1)
+move_wood agent2 wd2 finish1 pmake1 (1)
+make-bookshelf agent1 wd2 planer1 pmake1 (1)
+move_wood agent1 wd2 pmake1 finish1 (1)
+finish-bookshelf agent2 wd2 bkshelf1 blue paint-brush1 finish1 (1)
+[t=0.0231685s, 24820 KB] Plan length: 20 step(s).
+[t=0.0231685s, 24820 KB] Plan cost: 20
+[t=0.0231685s, 24820 KB] Expanded 310 state(s).
+[t=0.0231685s, 24820 KB] Reopened 0 state(s).
+[t=0.0231685s, 24820 KB] Evaluated 326 state(s).
+[t=0.0231685s, 24820 KB] Evaluations: 326
+[t=0.0231685s, 24820 KB] Generated 7397 state(s).
+[t=0.0231685s, 24820 KB] Dead ends: 15 state(s).
+[t=0.0231685s, 24820 KB] Number of registered states: 326
+[t=0.0231685s, 24820 KB] Int hash set load factor: 326/512 = 0.636719
+[t=0.0231685s, 24820 KB] Int hash set resizes: 9
+[t=0.0231685s, 24820 KB] Search time: 0.0159786s
+[t=0.0231685s, 24820 KB] Total time: 0.0231685s
+Solution found.
+Peak memory: 24820 KB
