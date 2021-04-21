@@ -1,8 +1,8 @@
-==90630== Massif, a heap profiler
-==90630== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
-==90630== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==90630== Command: ./ff -o ../../Woodworking/Satisficing/Classical/domain.pddl -f ../../Woodworking/Satisficing/Classical/problem-1.pddl
-==90630== 
+==10226== Massif, a heap profiler
+==10226== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
+==10226== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==10226== Command: ./ff -o ../../Woodworking/Satisficing/Classical/domain.pddl -f ../../Woodworking/Satisficing/Classical/problem-1.pddl
+==10226== 
 
 ff: parsing domain file
 domain 'WOODWORKING' defined
@@ -37,22 +37,29 @@ ff: found legal plan as follows
 
 step    0: CHANGE-POSITION AGENT2 OFFICE1 WPROC1
         1: MAKE-SMALL-WOOD WD1 HIGHSPEED-SAW1 AGENT2 WPROC1
-        2: MOVE_WOOD AGENT2 WD1 WPROC1 CMAKE1
+        2: MOVE_WOOD AGENT2 WD1 WPROC1 PMAKE1
         3: MAKE-MEDIUM-WOOD WD2 HIGHSPEED-SAW1 AGENT2 WPROC1
-        4: MOVE_WOOD AGENT2 WD2 WPROC1 CMAKE1
+        4: MOVE_WOOD AGENT2 WD2 WPROC1 PMAKE1
         5: MAKE-LARGE-WOOD WD3 HIGHSPEED-SAW1 AGENT2 WPROC1
-        6: MOVE_WOOD AGENT2 WD3 WPROC1 CMAKE1
-        7: CHANGE-POSITION AGENT2 WPROC1 CMAKE1
-        8: MAKE-TOY AGENT2 WD1 CHISEL1 CMAKE1
-        9: MOVE_WOOD AGENT2 WD1 CMAKE1 FINISH1
-       10: MAKE-BOOKSHELF AGENT2 WD2 PLANER1 CMAKE1
-       11: MOVE_WOOD AGENT2 WD2 CMAKE1 FINISH1
-       12: MAKE-TABLE AGENT2 WD3 PLANER1 BANDSAW1 CMAKE1
-       13: MOVE_WOOD AGENT2 WD3 CMAKE1 FINISH1
-       14: CHANGE-POSITION AGENT2 CMAKE1 FINISH1
+        6: MOVE_WOOD AGENT2 WD3 WPROC1 PMAKE1
+        7: CHANGE-POSITION AGENT2 WPROC1 PMAKE1
+        8: MAKE-TOY AGENT2 WD1 CHISEL1 PMAKE1
+        9: MOVE_WOOD AGENT2 WD1 PMAKE1 FINISH1
+       10: MAKE-BOOKSHELF AGENT2 WD2 PLANER1 PMAKE1
+       11: MOVE_WOOD AGENT2 WD2 PMAKE1 FINISH1
+       12: MAKE-TABLE AGENT2 WD3 PLANER1 BANDSAW1 PMAKE1
+       13: MOVE_WOOD AGENT2 WD3 PMAKE1 FINISH1
+       14: CHANGE-POSITION AGENT2 PMAKE1 FINISH1
        15: FINISH-TOY AGENT2 WD1 TOY1 RED PAINT-BRUSH1 FINISH1
        16: FINISH-BOOKSHELF AGENT2 WD2 BKSHELF1 BLUE PAINT-BRUSH1 FINISH1
        17: FINISH-TABLE AGENT2 WD3 TABLE1 GREEN PAINT-BRUSH1 FINISH1
      
 
-time spent:    0.05
+time spent:    0.05 seconds instantiating 566 easy, 0 hard action templates
+               0.01 seconds reachability analysis, yielding 108 facts and 566 actions
+               0.00 seconds creating final representation with 97 relevant facts
+               0.01 seconds building connectivity graph
+               0.02 seconds searching, evaluating 34 states, to a max depth of 1
+               0.09 seconds total time
+
+==10226== 

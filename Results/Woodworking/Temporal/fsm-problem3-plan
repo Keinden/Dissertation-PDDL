@@ -1,23 +1,17 @@
-==101092== Massif, a heap profiler
-==101092== Copyright (C) 2003-2017, and GNU GPL'd, by Nicholas Nethercote
-==101092== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
-==101092== Command: ./optic-cplex -N ../../Woodworking/Temporal/FSM/domain-fsm.pddl ../../Woodworking/Temporal/FSM/problem3_fsm.pddl
-==101092== 
 Number of literals: 323
 Constructing lookup tables: [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
 Post filtering unreachable actions:  [10%] [20%] [30%] [40%] [50%] [60%] [70%] [80%] [90%] [100%]
-==101092== brk segment overflow in thread #1: can't grow to 0x4812000
-==101092== (see section Limitations in user manual)
-==101092== NOTE: further instances of this message will not be shown
 No analytic limits found, not considering limit effects of goal-only operators
 All the ground actions in this problem are compression-safe
-Initial heuristic = 53.000, admissible cost estimate 0.000
-b (52.000 | 2.000)b (51.000 | 10.001)b (50.000 | 12.001)b (49.000 | 18.002)b (48.000 | 20.002)b (47.000 | 26.003)b (46.000 | 28.003)b (45.000 | 34.004)b (44.000 | 36.004)b (43.000 | 42.004)b (42.000 | 44.005)b (41.000 | 47.006)b (40.000 | 49.006)b (39.000 | 52.007)b (38.000 | 54.007)b (37.000 | 57.008)b (36.000 | 59.008)b (35.000 | 67.009)b (34.000 | 69.009)b (33.000 | 77.010)b (32.000 | 79.010)b (31.000 | 81.010)b (30.000 | 81.010)b (29.000 | 81.010)b (28.000 | 81.010)b (27.000 | 81.010)b (26.000 | 81.010)b (25.000 | 81.010)b (24.000 | 81.010)b (23.000 | 81.010)b (22.000 | 81.010)b (21.000 | 81.010)b (20.000 | 81.010)b (19.000 | 81.010)b (18.000 | 81.010)b (17.000 | 81.010)b (16.000 | 87.005)b (15.000 | 89.005)b (13.000 | 94.006)b (12.000 | 99.007)b (11.000 | 104.008)b (10.000 | 109.009)b (9.000 | 114.010)b (8.000 | 119.011)b (7.000 | 124.012)b (6.000 | 129.013)b (5.000 | 129.013)b (4.000 | 139.014)b (3.000 | 141.014)b (2.000 | 141.014)b (1.000 | 141.014)(G);;;; Solution Found
-; States evaluated: 270
+Initial heuristic = 56.000, admissible cost estimate 0.000
+b (55.000 | 2.000)b (54.000 | 10.001)b (53.000 | 12.001)b (52.000 | 18.002)b (51.000 | 20.002)b (50.000 | 26.003)b (49.000 | 28.003)b (48.000 | 34.004)b (47.000 | 36.004)b (46.000 | 42.004)b (45.000 | 44.004)b (44.000 | 47.006)b (43.000 | 49.006)b (42.000 | 52.007)b (41.000 | 54.007)b (40.000 | 57.007)b (39.000 | 59.008)b (38.000 | 67.009)b (37.000 | 69.009)b (36.000 | 77.010)b (35.000 | 79.010)b (34.000 | 81.010)b (33.000 | 81.010)b (32.000 | 81.010)b (31.000 | 81.010)b (30.000 | 81.010)b (29.000 | 81.010)b (28.000 | 81.010)b (27.000 | 81.010)b (26.000 | 81.010)b (25.000 | 81.010)b (24.000 | 81.010)b (23.000 | 81.010)b (22.000 | 81.010)b (21.000 | 81.010)b (20.000 | 81.010)b (19.000 | 81.010)b (18.000 | 87.005)b (17.000 | 89.005)b (13.000 | 94.006)b (12.000 | 99.007)b (11.000 | 104.008)b (10.000 | 109.009)b (9.000 | 114.010)b (8.000 | 119.011)b (7.000 | 124.012)b (6.000 | 129.013)b (5.000 | 130.013)b (4.000 | 130.013)b (3.000 | 130.013)b (2.000 | 130.013)b (1.000 | 139.014)(G);;;; Solution Found
+; States evaluated: 568
 ; Cost: 149.015
-; Time 2.71
+; Time 0.95
 0.000: (move-location agent1 office1 wproc1)  [2.000]
+0.000: (idle-state-to-wood-processing-state agent1)  [1.000]
 0.000: (move-location agent2 office1 pmake1)  [2.000]
+0.000: (idle-state-to-product-making-state agent2)  [1.000]
 2.001: (make-small-wood wd5 highspeed-saw1 agent1 wproc1)  [8.000]
 10.001: (move-wood agent1 wd5 wproc1 pmake1)  [2.000]
 10.002: (make-small-wood wd4 highspeed-saw1 agent1 wproc1)  [8.000]
@@ -51,7 +45,9 @@ b (52.000 | 2.000)b (51.000 | 10.001)b (50.000 | 12.001)b (49.000 | 18.002)b (48
 69.008: (make-bookshelf agent2 wd6 planer1 pmake1)  [10.000]
 72.004: (move-wood agent2 wd2 pmake1 finish1)  [2.000]
 72.005: (make-toy agent2 wd1 chisel1 pmake1)  [15.000]
+77.010: (wood-processing-state-to-idle-state agent1)  [1.000]
 77.010: (move-wood agent1 wd10 wproc1 pmake1)  [2.000]
+78.011: (idle-state-to-finishing-state agent1)  [1.000]
 79.008: (move-wood agent2 wd6 pmake1 finish1)  [2.000]
 79.009: (make-table agent2 wd9 planer1 bandsaw1 pmake1)  [20.000]
 79.010: (move-location agent1 wproc1 finish1)  [2.000]
@@ -64,11 +60,13 @@ b (52.000 | 2.000)b (51.000 | 10.001)b (50.000 | 12.001)b (49.000 | 18.002)b (48
 104.009: (finish-bookshelf agent1 wd6 bkshelf1 blue paint-brush1 finish1)  [5.000]
 109.010: (finish-toy agent1 wd5 toy5 red paint-brush1 finish1)  [5.000]
 114.011: (finish-toy agent1 wd4 toy4 red paint-brush1 finish1)  [5.000]
+119.010: (product-making-state-to-idle-state agent2)  [1.000]
 119.010: (move-wood agent2 wd10 pmake1 finish1)  [2.000]
 119.012: (finish-toy agent1 wd3 toy3 red paint-brush1 finish1)  [5.000]
-121.010: (move-location agent2 pmake1 finish1)  [2.000]
+120.011: (idle-state-to-finishing-state agent2)  [1.000]
 124.013: (finish-toy agent1 wd2 toy2 blue paint-brush1 finish1)  [5.000]
-129.014: (finish-table agent1 wd9 table1 green paint-brush1 finish1)  [10.000]
-139.014: (move-location agent1 finish1 pmake1)  [2.000]
-139.015: (finish-table agent2 wd10 table2 red paint-brush1 finish1)  [10.000]
-==101092== 
+127.014: (move-location agent2 pmake1 finish1)  [2.000]
+129.014: (finish-table agent2 wd10 table2 red paint-brush1 finish1)  [10.000]
+137.014: (finishing-state-to-idle-state agent1)  [1.000]
+138.015: (idle-state-to-finishing-state agent1)  [1.000]
+139.015: (finish-table agent1 wd9 table1 green paint-brush1 finish1)  [10.000]

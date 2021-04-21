@@ -1,22 +1,41 @@
+change-position agent2 office1 cmake1 (1)
+change-position agent1 office1 wproc1 (1)
+change_into_wood_processing_state agent1 (1)
+make-large-wood wd3 highspeed-saw1 agent1 wproc1 (1)
+make-medium-wood wd2 highspeed-saw1 agent1 wproc1 (1)
+make-small-wood wd1 highspeed-saw1 agent1 wproc1 (1)
+move_wood agent1 wd1 wproc1 cmake1 (1)
+move_wood agent1 wd2 wproc1 cmake1 (1)
+move_wood agent1 wd3 wproc1 cmake1 (1)
+change-position agent1 wproc1 finish1 (1)
+change_into_product_state agent2 (1)
+make-bookshelf agent2 wd2 planer1 cmake1 (1)
+make-table agent2 wd3 planer1 bandsaw1 cmake1 (1)
+make-toy agent2 wd1 chisel1 cmake1 (1)
+move_wood agent2 wd1 cmake1 finish1 (1)
+move_wood agent2 wd2 cmake1 finish1 (1)
+move_wood agent2 wd3 cmake1 finish1 (1)
+change_into_idle agent1 (1)
+change_into_finish agent1 (1)
 finish-bookshelf agent1 wd2 bkshelf1 blue paint-brush1 finish1 (1)
 finish-table agent1 wd3 table1 green paint-brush1 finish1 (1)
 finish-toy agent1 wd1 toy1 red paint-brush1 finish1 (1)
-[t=0.0559746s, 25216 KB] Plan length: 22 step(s).
-[t=0.0559746s, 25216 KB] Plan cost: 22
-[t=0.0559746s, 25216 KB] Expanded 301 state(s).
-[t=0.0559746s, 25216 KB] Reopened 0 state(s).
-[t=0.0559746s, 25216 KB] Evaluated 7603 state(s).
-[t=0.0559746s, 25216 KB] Evaluations: 7603
-[t=0.0559746s, 25216 KB] Generated 10626 state(s).
-[t=0.0559746s, 25216 KB] Dead ends: 420 state(s).
-[t=0.0559746s, 25216 KB] Expanded until last jump: 286 state(s).
-[t=0.0559746s, 25216 KB] Reopened until last jump: 0 state(s).
-[t=0.0559746s, 25216 KB] Evaluated until last jump: 7161 state(s).
-[t=0.0559746s, 25216 KB] Generated until last jump: 10088 state(s).
-[t=0.0559746s, 25216 KB] Number of registered states: 7603
-[t=0.0559746s, 25216 KB] Int hash set load factor: 7603/16384 = 0.46405
-[t=0.0559746s, 25216 KB] Int hash set resizes: 14
-[t=0.0559746s, 25216 KB] Search time: 0.0519698s
-[t=0.0559746s, 25216 KB] Total time: 0.0559746s
+[t=0.0640156s, 25216 KB] Plan length: 22 step(s).
+[t=0.0640156s, 25216 KB] Plan cost: 22
+[t=0.0640156s, 25216 KB] Expanded 301 state(s).
+[t=0.0640156s, 25216 KB] Reopened 0 state(s).
+[t=0.0640156s, 25216 KB] Evaluated 7603 state(s).
+[t=0.0640156s, 25216 KB] Evaluations: 7603
+[t=0.0640156s, 25216 KB] Generated 10626 state(s).
+[t=0.0640156s, 25216 KB] Dead ends: 420 state(s).
+[t=0.0640156s, 25216 KB] Expanded until last jump: 286 state(s).
+[t=0.0640156s, 25216 KB] Reopened until last jump: 0 state(s).
+[t=0.0640156s, 25216 KB] Evaluated until last jump: 7161 state(s).
+[t=0.0640156s, 25216 KB] Generated until last jump: 10088 state(s).
+[t=0.0640156s, 25216 KB] Number of registered states: 7603
+[t=0.0640156s, 25216 KB] Int hash set load factor: 7603/16384 = 0.46405
+[t=0.0640156s, 25216 KB] Int hash set resizes: 14
+[t=0.0640156s, 25216 KB] Search time: 0.0598915s
+[t=0.0640156s, 25216 KB] Total time: 0.0640156s
 Solution found.
 Peak memory: 25216 KB

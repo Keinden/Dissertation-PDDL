@@ -90,6 +90,7 @@
             (agent-in ?agt ?loc)
             (tool-in ?saw ?loc)
             (wood-in ?wood ?loc)
+            (wood-processing-state ?agt)
         ))
     )
     :effect (and 
@@ -116,6 +117,7 @@
             (agent-in ?agt ?loc)
             (tool-in ?saw ?loc)
             (wood-in ?wood ?loc)
+            (wood-processing-state ?agt)
         ))
     )
     :effect (and 
@@ -142,6 +144,7 @@
             (agent-in ?agt ?loc)
             (tool-in ?saw ?loc)
             (wood-in ?wood ?loc)
+            (wood-processing-state ?agt)
         ))
     )
     :effect (and 
@@ -168,6 +171,7 @@
             (agent-in ?agt ?loc)
             (tool-in ?chs ?loc)
             (wood-in ?wood ?loc)
+            (product-making-state ?agt)
         ))
     )
     :effect (and 
@@ -194,6 +198,7 @@
             (agent-in ?agt ?loc)
             (tool-in ?pln ?loc)
             (wood-in ?wood ?loc)
+            (product-making-state ?agt)
         ))
     )
     :effect (and 
@@ -222,6 +227,7 @@
             (tool-in ?pln ?loc)
             (tool-in ?bsaw ?loc)
             (wood-in ?wood ?loc)
+            (product-making-state ?agt)
         ))
     )
     :effect (and 
@@ -251,6 +257,7 @@
             (order ?pdt ?clr)
             (agent-in ?agt ?loc)
             (tool-in ?ptbh ?loc)
+            (finishing-state ?agt)
         ))
     )
     :effect (and 
@@ -280,6 +287,7 @@
             (order ?pdt ?clr)
             (agent-in ?agt ?loc)
             (tool-in ?ptbh ?loc)
+            (finishing-state ?agt)
         ))
     )
     :effect (and 
@@ -309,6 +317,7 @@
             (order ?pdt ?clr)
             (agent-in ?agt ?loc)
             (tool-in ?ptbh ?loc)
+            (finishing-state ?agt)
         ))
     )
     :effect (and 
