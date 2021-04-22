@@ -247,7 +247,7 @@
     )
 )
 
-(:action transport-state-to-dock-state
+(:action transport-state-to-idle-state
     :parameters (?agt - agent)
     :precondition (and 
         (transport-state ?agt)
