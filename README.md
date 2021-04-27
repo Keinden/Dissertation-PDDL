@@ -16,6 +16,8 @@ In each directory with a domain name contains 2 directories called Classical and
 
 The Results directory contains the results of each run for classical, fsm and temporal domains. There are several excel worksheets that I used to compile all the data together. 
 
+The Sandwich directory contains a very simple sandwich stacking example (like blocksworld)
+
 ## If you want the code
 
 Currently there is no license so the default copyright laws apply so feel free to download it to take a look but please do not modify or distribute the code. See [GitHub's licensing page](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/licensing-a-repository#choosing-the-right-license) for more information.
